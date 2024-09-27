@@ -1,0 +1,71 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false 
+
+format = """
+[](fg:color_item1)\
+$os\
+[](fg:color_item1 bg:color_item2)\
+$directory\
+[](fg:color_item2 bg:color_item3)\
+$git_branch\
+$git_status\
+[](fg:color_item3 bg:color_item4)\
+$status\
+[](fg:color_item4)\
+\n$character"""
+
+palette = 'pastel'
+
+[palettes.pastel]
+color_white = '#fbf1c7'
+color_black = '#3c3836'
+color_gray = '#665c54'
+color_item1 = '#9A348E'
+color_item2 = '#DA627D'
+color_item3 = '#FCA17D'
+color_item4 = '#86BBD8'
+color_item5 = '#33658A'
+color_item6 = '#06969A'
+
+
+[os]
+style="fg:color_white bg:color_item1"
+disabled = false
+
+[os.symbols]
+Linux = " " # nf-fa-linux
+Ubuntu = " " # nf-fa-ubuntu
+Macos = " " # nf-fa-apple
+Windows = " " # nf-fa-apple
+
+[directory]
+format = "[ $path ]($style)"
+style = 'bold fg:color_black bg:color_item2'
+truncation_length = 8
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bold fg:color_black bg:color_item3"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = 'bold fg:color_black bg:color_item3'
+
+[status]
+format = '[ status: $status ]($style)'
+style = 'bold fg:color_black bg:color_item4'
+disabled = false
+# success_symbol = 'status: 0'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[character]
+success_symbol = '[❯](bold color_white)'
+error_symbol = '[❯](bold color_white)'
