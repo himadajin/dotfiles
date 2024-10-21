@@ -2,63 +2,67 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-add_newline = false 
+add_newline = true
 
 format = """
-[](fg:color_item1)\
+[](fg:item1_bg)\
 $os\
-[](fg:color_item1 bg:color_item2)\
+[](fg:item1_bg bg:item2_bg)\
 $directory\
-[](fg:color_item2 bg:color_item3)\
+[](fg:item2_bg bg:item3_bg)\
 $git_branch\
 $git_status\
-[](fg:color_item3 bg:color_item4)\
+[](fg:item3_bg bg:item4_bg)\
 $status\
-[](fg:color_item4)\
+[](fg:item5_bg)\
 \n$character"""
 
-palette = 'pastel'
+palette = 'tokyo-night'
 
-[palettes.pastel]
-color_white = '#fbf1c7'
-color_black = '#3c3836'
-color_gray = '#665c54'
-color_item1 = '#9A348E'
-color_item2 = '#DA627D'
-color_item3 = '#FCA17D'
-color_item4 = '#86BBD8'
-color_item5 = '#33658A'
-color_item6 = '#06969A'
+[palettes.tokyo-night]
+color_white='#e3e5e5'
+color_black='#090c0c'
 
+item1_fg='#090c0c'
+item2_fg='#e3e5e5'
+item3_fg='#769ff0'
+item4_fg='#769ff0'
+item5_fg='#a0a9cb'
+
+item1_bg='#a3aed2'
+item2_bg='#769ff0'
+item3_bg='#394260'
+item4_bg='#212736'
+item5_bg='#1d2230'
 
 [os]
-style="fg:color_white bg:color_item1"
+style='fg:item1_fg bg:item1_bg'
 disabled = false
 
 [os.symbols]
-Linux = " " # nf-fa-linux
-Ubuntu = " " # nf-fa-ubuntu
-Macos = " " # nf-fa-apple
-Windows = " " # nf-fa-apple
+Linux = ' ' # nf-fa-linux
+Ubuntu = ' ' # nf-fa-ubuntu
+Macos = ' ' # nf-fa-apple
+Windows = ' ' # nf-fa-apple
 
 [directory]
-format = "[ $path ]($style)"
-style = 'bold fg:color_black bg:color_item2'
+format = '[ $path ]($style)'
+style = 'bold fg:item2_fg bg:item2_bg'
 truncation_length = 8
-truncation_symbol = "…/"
+truncation_symbol = '…/'
 
 [git_branch]
-symbol = ""
-style = "bold fg:color_black bg:color_item3"
+symbol = ''
+style = "bold fg:item3_fg bg:item3_bg"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = 'bold fg:color_black bg:color_item3'
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = 'bold fg:item3_fg bg:item3_bg'
 
 [status]
 format = '[ status: $status ]($style)'
-style = 'bold fg:color_black bg:color_item4'
+style = 'bold fg:item4_fg bg:item4_bg'
 disabled = false
 # success_symbol = 'status: 0'
 
