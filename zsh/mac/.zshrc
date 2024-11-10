@@ -118,7 +118,6 @@ abbr -S clc="clear" > /dev/null
 abbr -S clewar="clear" > /dev/null
 abbr -S cleawr="clear" > /dev/null
 
-
 abbr -S srcz="source ~/.zshrc" > /dev/null
 
 alias python="python3.12"
@@ -139,6 +138,4 @@ zshaddhistory() {
   ]]
 }
 
-
 eval "$(starship init zsh)"
-
