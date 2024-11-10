@@ -1,6 +1,9 @@
 # PATH settings
 export PATH="${PATH}:/opt/homebrew/bin"
-export PATH="${PATH}:$(brew --prefix)/opt/llvm@17/bin"
+
+LLVM_VERSION=14
+export PATH="${PATH}:$(brew --prefix)/opt/llvm@${LLVM_VERSION}/bin"
+
 export fpath=(
   $fpath
   "$(brew --prefix)/share/zsh/site-functions"
@@ -111,8 +114,10 @@ abbr -S vim="nvim" > /dev/null
 abbr -S vi="nvim" > /dev/null
 abbr -S v="nvim" > /dev/null
 
-abbr -S clr="clear" > /dev/null
+abbr -S clc="clear" > /dev/null
 abbr -S clewar="clear" > /dev/null
+abbr -S cleawr="clear" > /dev/null
+
 
 abbr -S srcz="source ~/.zshrc" > /dev/null
 
