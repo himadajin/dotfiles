@@ -102,7 +102,10 @@ unset -f setup_zsh_auto_complete
 
 setopt interactive_comments
 setopt hist_ignore_all_dups
+setopt hist_ignore_dups
 setopt hist_reduce_blanks
+setopt share_history
+setopt append_history
 zstyle ':completion:*' expand-tilde no
 
 LS_OPTIONS='--color=auto'
@@ -121,6 +124,7 @@ abbr -S cleawr="clear" > /dev/null
 abbr -S srcz="source ~/.zshrc" > /dev/null
 
 alias python="python3.12"
+alias python3="python3.12"
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"
@@ -133,8 +137,7 @@ zshaddhistory() {
   # Only add to history if all of the follwing condition are met
   [[
     ${#line} -ge 5
-    && ${cmd} != (l[sal]) # ls
-    && ${cmd} != (cd|man|clear|which|true|false)
+    && ${cmd} != (man|clear|true|false)
   ]]
 }
 
