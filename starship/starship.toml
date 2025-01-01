@@ -50,6 +50,7 @@ format = '[ $path ]($style)'
 style = 'bold fg:item2_fg bg:item2_bg'
 truncation_length = 8
 truncation_symbol = '…/'
+truncate_to_repo = false
 
 [git_branch]
 symbol = ''
