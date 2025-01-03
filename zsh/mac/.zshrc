@@ -46,7 +46,7 @@ setup_zsh_auto_complete() {
   # zsh-z|zoxide|z.lua|z.sh|autojump|fasd: Use this instead (if installed).
   # ⚠️ NOTE: This setting can NOT be changed at runtime.
 
-  zstyle ':autocomplete:*' insert-unambiguous no
+  zstyle ':autocomplete:*' insert-unambiguous yes
   # no:  Tab inserts the top completion.
   # yes: Tab first inserts a substring common to all listed completions, if any.
 
@@ -100,13 +100,15 @@ setup_zsh_auto_complete() {
 setup_zsh_auto_complete
 unset -f setup_zsh_auto_complete
 
+zstyle ':completion:*' file-sort name reverse
+zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
+
 setopt interactive_comments
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_reduce_blanks
 setopt share_history
 setopt append_history
-zstyle ':completion:*' expand-tilde no
 
 LS_OPTIONS='--color=auto'
 alias ls="ls $LS_OPTIONS -a"
@@ -137,7 +139,7 @@ zshaddhistory() {
   # Only add to history if all of the follwing condition are met
   [[
     ${#line} -ge 5
-    && ${cmd} != (man|clear|true|false)
+    && ${cmd} != (clear|true|false)
   ]]
 }
 
