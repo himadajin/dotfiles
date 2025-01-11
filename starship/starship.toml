@@ -72,5 +72,5 @@ disabled = false
 disabled = true
 
 [character]
-success_symbol = '[❯](bold color_white)'
-error_symbol = '[❯](bold color_white)'
+success_symbol = '[>](bold color_white)'
+error_symbol = '[>](bold color_white)'
