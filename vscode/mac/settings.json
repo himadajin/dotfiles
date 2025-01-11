@@ -68,5 +68,12 @@
     "hexeditor.columnWidth": 16,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
-    "hexeditor.showDecodedText": true
+    "hexeditor.showDecodedText": true,
+    "color-highlight.languages": [
+        "!c",
+        "!cpp",
+        "!llvm",
+        "*"
+    ],
+    "workspaceExplorer.workspaceStorageDirectory": "/Users/taiki/vscode-workspaces"
 }
