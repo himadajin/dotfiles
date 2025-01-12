@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/llvm-project/llvm/include",
+                "${workspaceFolder}/llvm-project/llvm/lib/Target/AArch64",
+                "${workspaceFolder}/llvm-project/llvm/lib/Target/RISCV",
+                "${workspaceFolder}/llvm-project/llvm/lib/Target/X86",
+                "${workspaceFolder}/llvm-project/build/include",
+                "${workspaceFolder}/llvm-project/build/lib/Target/AArch64",
+                "${workspaceFolder}/llvm-project/build/lib/Target/RISCV",
+                "${workspaceFolder}/llvm-project/build/lib/Target/X86",
+                "${workspaceFolder}/llvm-project/third-party/benchmark/include"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}
