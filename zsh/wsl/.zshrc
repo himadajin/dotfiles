@@ -1,8 +1,16 @@
 # PATH settings
-export PATH="$PATH":"/mnt/c/Users/harad/AppData/Local/Programs/Microsoft VS Code/bin/"
+export path=(
+  $path
+  "/mnt/c/Users/harad/AppData/Local/Programs/Microsoft VS Code/bin"
+  "/opt/llvm/llvm@19/bin"
+)
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-abbr/zsh-abbr.zsh
+source "${HOME}/.zsh/zsh-abbr/zsh-abbr.zsh"
+
+export HISTFILE="${HOME}/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 setup_zsh_auto_complete() {
   skip_global_compinit=1
@@ -99,7 +107,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_reduce_blanks
 setopt share_history
-setopt append_history
+# setopt append_history
 
 export LS_OPTIONS='--color=auto'
 alias ls='ls $LS_OPTIONS -a'
@@ -113,11 +121,8 @@ abbr -S clc="clear" > /dev/null
 abbr -S clewar="clear" > /dev/null
 abbr -S cleawr="clear" > /dev/null
 
-abbr -S srcz="source ~/.zshrc" > /dev/null
-
 # setup nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 eval "$(starship init zsh)"
-
