@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/llvm-project/llvm/include",
+                "${workspaceFolder}/llvm-project/llvm/lib/Target/AArch64",
+                "${workspaceFolder}/llvm-project/llvm/lib/Target/RISCV",
+                "${workspaceFolder}/llvm-project/llvm/lib/Target/X86",
+                "${workspaceFolder}/llvm-project/build/include",
+                "${workspaceFolder}/llvm-project/build/lib/Target/AArch64",
+                "${workspaceFolder}/llvm-project/build/lib/Target/RISCV",
+                "${workspaceFolder}/llvm-project/build/lib/Target/X86",
+                "${workspaceFolder}/llvm-project/third-party/benchmark/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "compilerPath": "/usr/bin/g++",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
