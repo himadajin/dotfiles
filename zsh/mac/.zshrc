@@ -1,13 +1,23 @@
-# PATH settings
-export PATH="${PATH}:/opt/homebrew/bin"
-
-LLVM_VERSION=14
-export PATH="${PATH}:$(brew --prefix)/opt/llvm@${LLVM_VERSION}/bin"
+# path, fpath settings
+export path=(
+  $path
+  "/opt/homebrew/bin"
+  "/opt/llvm/llvm-12/bin"
+  "/opt/llvm/llvm@17/bin"
+  "/opt/llvm/llvm@19/bin"
+)
 
 export fpath=(
   $fpath
   "$(brew --prefix)/share/zsh/site-functions"
   "${HOME}/.zsh/zsh-completions/src"
+)
+
+export cdpath=(
+  "${HOME}"
+  "${HOME}/projects"
+  "${HOME}/repos"
+  "${HOME}/works"
 )
 
 source "$(brew --prefix)/share/zsh-syntax-highlighting/"
@@ -111,9 +121,9 @@ setopt share_history
 setopt append_history
 
 LS_OPTIONS='--color=auto'
-alias ls="ls $LS_OPTIONS -a"
-alias ll="ls $LS_OPTIONS -l"
-alias la="ls $LS_OPTIONS -la"
+alias ls="ls $LS_OPTIONS"
+alias la="ls $LS_OPTIONS -a"
+alias ll="ls $LS_OPTIONS -lha"
 
 abbr -S vim="nvim" > /dev/null
 abbr -S vi="nvim" > /dev/null
@@ -123,24 +133,11 @@ abbr -S clc="clear" > /dev/null
 abbr -S clewar="clear" > /dev/null
 abbr -S cleawr="clear" > /dev/null
 
-abbr -S srcz="source ~/.zshrc" > /dev/null
-
 alias python="python3.12"
 alias python3="python3.12"
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
-
-zshaddhistory() {
-  local line=${1%%$'\n'}
-  local cmd=${line%% *}
-
-  # Only add to history if all of the follwing condition are met
-  [[
-    ${#line} -ge 5
-    && ${cmd} != (clear|true|false)
-  ]]
-}
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 
 eval "$(starship init zsh)"
