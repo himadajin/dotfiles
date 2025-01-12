@@ -2,7 +2,15 @@
 export path=(
   $path
   "/mnt/c/Users/harad/AppData/Local/Programs/Microsoft VS Code/bin"
+  "/opt/llvm/llvm@12/bin"
   "/opt/llvm/llvm@19/bin"
+)
+
+export cdpath=(
+  "${HOME}"
+  "${HOME}/projects"
+  "${HOME}/repos"
+  "${HOME}/works"
 )
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -110,9 +118,9 @@ setopt share_history
 # setopt append_history
 
 export LS_OPTIONS='--color=auto'
-alias ls='ls $LS_OPTIONS -a'
-alias ll='ls $LS_OPTIONS -lh'
-alias la='ls $LS_OPTIONS -lha'
+alias ls="ls $LS_OPTIONS"
+alias la="ls $LS_OPTIONS -a"
+alias ll="ls $LS_OPTIONS -lha"
 
 alias python='python3.12'
 alias python3='python3.12'
