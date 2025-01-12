@@ -6,6 +6,11 @@ export path=(
   "/opt/llvm/llvm@19/bin"
 )
 
+export fpath=(
+  $fpath
+  "${HOME}/.zsh/zsh-completions/src"
+)
+
 export cdpath=(
   "${HOME}"
   "${HOME}/projects"
@@ -117,7 +122,7 @@ setopt hist_reduce_blanks
 setopt share_history
 # setopt append_history
 
-export LS_OPTIONS='--color=auto'
+LS_OPTIONS='--color=auto'
 alias ls="ls $LS_OPTIONS"
 alias la="ls $LS_OPTIONS -a"
 alias ll="ls $LS_OPTIONS -lha"
