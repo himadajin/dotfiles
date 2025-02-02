@@ -1,6 +1,14 @@
 #!/bin/bash
 set -eu
 
+# Building LLVM with CMake
+# https://releases.llvm.org/19.1.0/docs/CMake.html
+#
+# how to build:
+# ./run-cmake.sh
+# ninja -C llvm-project/build
+# sudo ninja -C llvm-project/build install
+
 script_dir="$(dirname "$(realpath "$0")")"
 build_dir="${script_dir}/llvm-project/build"
 mkdir -p $build_dir
