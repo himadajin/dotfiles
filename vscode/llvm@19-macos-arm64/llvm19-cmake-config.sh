@@ -20,7 +20,6 @@ cmake_opts=(
   -DCMAKE_OSX_ARCHITECTURES="arm64"
   -DCMAKE_INSTALL_PREFIX=/opt/llvm/llvm@19
   -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
-  -DLLVM_BUILD_DOCS="ON"
   -DLLVM_CCACHE_BUILD="ON"
   -DLLVM_ENABLE_PROJECTS="clang;lld"
   -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind"
