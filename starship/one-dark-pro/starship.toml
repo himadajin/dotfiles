@@ -1,0 +1,80 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$os\
+$directory\
+$time\
+$git_branch\
+$git_status\
+$status\
+\n$character"""
+
+palette = 'one-dark-pro'
+
+[palettes.one-dark-pro]
+background='#282C34'
+black='#3F4451'
+blue='#61AFEF'
+brightBlack='#4F5666'
+brightBlue='#4DC4FF'
+brightCyan='#4CD1E0'
+brightGreen='#A5E075'
+brightPurple='#DE73FF'
+brightRed='#BE5046'
+brightWhite='#E6E6E6'
+brightYellow='#E5C07B'
+cursorColor='#528BFF'
+cyan='#56B6C2'
+foreground='#ABB2BF'
+green='#98C379'
+purple='#C678DD'
+red='#E06C75'
+selectionBackground='#ABB2BF'
+white='#D7DAE0'
+yellow='#D19A66'
+
+[os]
+format = "[$symbol ]($style)"
+style='bold fg:white'
+disabled = false
+
+[os.symbols]
+Ubuntu = ' ' # nf-fa-ubuntu
+Macos = ' ' # nf-fa-apple
+Windows = ' ' # nf-fa-apple
+
+[directory]
+format = '[ $path]($style)'
+style = 'bold fg:green'
+truncation_length = 8
+truncation_symbol = '…/'
+truncate_to_repo = false
+
+[time]
+format='[   $time]($style)'
+time_format = "%H:%M"
+style='bold fg:blue'
+disabled = false
+
+[git_branch]
+format = '[ $symbol $branch]($style)'
+symbol = ''
+style = "bold fg:yellow"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = 'bold fg:yellow'
+
+[status]
+format = '[ status: $status ]($style)'
+style = 'bold fg:red'
+disabled = false
+
+[package]
+disabled = true
+
+[character]
+success_symbol = '[>](bold white)'
+error_symbol = '[>](bold white)'
