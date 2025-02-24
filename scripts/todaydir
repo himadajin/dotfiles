@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# make a directory with today's date
+mkdir -p $(date "+%Y-%m-%d")
