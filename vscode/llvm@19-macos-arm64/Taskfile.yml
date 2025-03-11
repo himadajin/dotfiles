@@ -1,0 +1,44 @@
+version: '3'
+tasks:
+  cmake_release:
+    desc: "configure release build"
+    vars:
+      args: >-
+        -G Ninja
+        -S llvm-project/llvm
+        -B llvm-project/build/release
+        -DCMAKE_BUILD_TYPE=Release
+        -DCMAKE_INSTALL_PREFIX=/opt/llvm/llvm@19
+        -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
+        -DLLVM_CCACHE_BUILD=ON
+        -DLLVM_ENABLE_PROJECTS="clang;lld"
+        -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind"
+        -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV;X86"
+    cmd: cmake {{ .args }}
+  cmake_debug:
+    desc: "configure debug build"
+    vars:
+      args: >-
+        -G Ninja
+        -S llvm-project/llvm
+        -B llvm-project/build/debug
+        -DCMAKE_BUILD_TYPE=Debug
+        -DCMAKE_INSTALL_PREFIX=/opt/llvm/llvm@19
+        -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
+        -DLLVM_CCACHE_BUILD=ON
+        -DLLVM_ENABLE_PROJECTS="clang;lld"
+        -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind"
+        -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV;X86"
+    cmd: cmake {{ .args }}
+  build_release:
+    desc: "build release"
+    dir: llvm-project/build/release
+    cmd: ninja
+  build_debug:
+    desc: "build debug"
+    dir: llvm-project/build/debug
+    cmd: ninja
+  install_release:
+    desc: "install release"
+    dir: llvm-project/build/release
+    cmd: sudo ninja install
