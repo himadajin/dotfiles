@@ -2,22 +2,23 @@
 export path=(
   $path
   "/opt/homebrew/bin"
-  "/opt/llvm/llvm-12/bin"
-  "/opt/llvm/llvm@17/bin"
+  "/opt/homebrew/opt/binutils/bin"
   "/opt/llvm/llvm@19/bin"
+  "/opt/llvm/llvm@17/bin"
+  "/opt/llvm/llvm@12/bin"
+  "${HOME}/opt/bin"
 )
 
 export fpath=(
   $fpath
-  "$(brew --prefix)/share/zsh/site-functions"
   "${HOME}/.zsh/zsh-completions/src"
+  "${HOME}/.zsh/completions"
+  "$(brew --prefix)/share/zsh/site-functions"
 )
 
 export cdpath=(
   "${HOME}"
-  "${HOME}/projects"
   "${HOME}/repos"
-  "${HOME}/works"
 )
 
 source "$(brew --prefix)/share/zsh-syntax-highlighting/"
@@ -125,13 +126,9 @@ alias ls="ls $LS_OPTIONS"
 alias la="ls $LS_OPTIONS -a"
 alias ll="ls $LS_OPTIONS -lha"
 
-abbr -S vim="nvim" > /dev/null
-abbr -S vi="nvim" > /dev/null
-abbr -S v="nvim" > /dev/null
 
+abbr -S v="nvim" > /dev/null
 abbr -S clc="clear" > /dev/null
-abbr -S clewar="clear" > /dev/null
-abbr -S cleawr="clear" > /dev/null
 
 alias python="python3.12"
 alias python3="python3.12"
