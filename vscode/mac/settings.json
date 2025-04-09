@@ -15,6 +15,7 @@
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,
     "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.enablePersistentSessions": false,
     "update.showReleaseNotes": false,
     "workbench.colorTheme": "One Dark Pro Night Flat",
     "workbench.secondarySideBar.showLabels": false,
