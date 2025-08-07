@@ -1,12 +1,10 @@
-# path, fpath settings
+
 export path=(
   $path
   "/opt/homebrew/bin"
   "/opt/homebrew/opt/binutils/bin"
-  "/opt/llvm/llvm@19/bin"
-  "/opt/llvm/llvm@17/bin"
-  "/opt/llvm/llvm@12/bin"
-  "${HOME}/opt/bin"
+  "${HOME}/local/bin"
+  "${HOME}/local/llvm/llvm@20/bin"
 )
 
 export fpath=(
@@ -21,7 +19,7 @@ export cdpath=(
   "${HOME}/repos"
 )
 
-source "$(brew --prefix)/share/zsh-syntax-highlighting/"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 
 setup_zsh_auto_complete() {
@@ -121,17 +119,20 @@ setopt hist_reduce_blanks
 setopt share_history
 setopt append_history
 
-LS_OPTIONS='--color=auto'
-alias ls="ls $LS_OPTIONS"
-alias la="ls $LS_OPTIONS -a"
-alias ll="ls $LS_OPTIONS -lha"
+alias ls="ls --color=auto"
+alias la="ls --color=auto -a"
+alias ll="ls --color=auto -lha"
 
+alias python="python3.13"
+alias python3="python3.13"
+alias pip="pip3.13"
+alias pip3="pip3.13"
 
+abbr -S c="code" > /dev/null
+abbr -S m="make" > /dev/null
+abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
 abbr -S clc="clear" > /dev/null
-
-alias python="python3.12"
-alias python3="python3.12"
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"
