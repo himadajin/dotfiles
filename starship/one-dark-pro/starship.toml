@@ -5,10 +5,10 @@ add_newline = true
 format = """
 $os\
 $directory\
-$time\
 $git_branch\
 $git_status\
 $status\
+$time\
 \n$character"""
 
 palette = 'one-dark-pro'
@@ -52,12 +52,6 @@ truncation_length = 8
 truncation_symbol = '…/'
 truncate_to_repo = false
 
-[time]
-format='[   $time]($style)'
-time_format = "%H:%M"
-style='bold fg:blue'
-disabled = false
-
 [git_branch]
 format = '[ $symbol $branch]($style)'
 symbol = ''
@@ -70,6 +64,12 @@ style = 'bold fg:yellow'
 [status]
 format = '[ status: $status ]($style)'
 style = 'bold fg:red'
+disabled = false
+
+[time]
+format='[  $time]($style)'
+time_format = "%H:%M"
+style='bold fg:blue'
 disabled = false
 
 [package]
