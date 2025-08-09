@@ -1,29 +1,6 @@
-# PATH settings
-export path=(
-  $path
-  "/mnt/c/Users/harad/AppData/Local/Programs/Microsoft VS Code/bin"
-  "/opt/llvm/llvm@12/bin"
-  "/opt/llvm/llvm@19/bin"
-)
-
-export fpath=(
-  $fpath
-  "${HOME}/.zsh/zsh-completions/src"
-)
-
-export cdpath=(
-  "${HOME}"
-  "${HOME}/projects"
-  "${HOME}/repos"
-  "${HOME}/works"
-)
-
+# = zsh =
+# enable zsh-syntax-highlighting before zsh-autocomplete
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source "${HOME}/.zsh/zsh-abbr/zsh-abbr.zsh"
-
-export HISTFILE="${HOME}/.zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=10000
 
 setup_zsh_auto_complete() {
   skip_global_compinit=1
@@ -32,7 +9,7 @@ setup_zsh_auto_complete() {
   # '': Start each new command line with normal autocompletion.
   # history-incremental-search-backward: Start in live history search mode.
 
-  zstyle ':autocomplete:*' min-delay 0.05  # float
+  zstyle ':autocomplete:*' min-delay 0.1  # float
   # Wait this many seconds for typing to stop, before showing completions.
 
   zstyle ':autocomplete:*' min-input 0  # int
@@ -122,20 +99,61 @@ setopt hist_reduce_blanks
 setopt share_history
 # setopt append_history
 
-LS_OPTIONS='--color=auto'
-alias ls="ls $LS_OPTIONS"
-alias la="ls $LS_OPTIONS -a"
-alias ll="ls $LS_OPTIONS -lha"
+# turn off cursor blinking
+echo -ne '\e[?12l'
 
-alias python='python3.12'
-alias python3='python3.12'
+# = general settings =
+export HISTFILE="${HOME}/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
 
+export RISCV="${HOME}/opt/riscv"
+
+export path=(
+  $path
+  "/mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin"
+  "/opt/mold/bin"
+  "/opt/llvm/llvm@19/bin"
+  "${HOME}/.local/bin"
+  "${HOME}/opt/bin"
+  "${RISCV}/bin"
+)
+
+export cdpath=(
+  "${HOME}"
+  "${HOME}/repos"
+)
+
+export fpath=(
+  $fpath
+  "${HOME}/.zsh/zsh-completions/src"
+)
+
+alias ls="ls --color=auto"
+alias la="ls --color=auto -a"
+alias ll="ls --color=auto -lha"
+
+# setup abbr
+source "${HOME}/.zsh/zsh-abbr/zsh-abbr.zsh"
+abbr -S c="code" > /dev/null
+abbr -S m="make" > /dev/null
+abbr -S t="task" > /dev/null
+abbr -S v="nvim" > /dev/null
+abbr -S tm="tmux" > /dev/null
 abbr -S clc="clear" > /dev/null
-abbr -S clewar="clear" > /dev/null
-abbr -S cleawr="clear" > /dev/null
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# setup rust
+. "${HOME}/.cargo/env"
+
+# setup completion for go-task
+eval "$(task --completion zsh)"
+
+# setup completion for uv
+eval "$(uv generate-shell-completion zsh)"
+
+# setup starship
 eval "$(starship init zsh)"
