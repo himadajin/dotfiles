@@ -1,110 +1,135 @@
 {
-    // vscode
-    "editor.fontSize": 12.5,
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
-    "editor.formatOnType": false,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all",
-    "editor.rulers": [
-        80
-    ],
-    "editor.stickyScroll.enabled": true,
-    "editor.tabSize": 2,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.compactFolders": false,
-    "extensions.ignoreRecommendations": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.enablePersistentSessions": false,
-    "update.showReleaseNotes": false,
-    "workbench.colorTheme": "One Dark Pro Night Flat",
-    "workbench.secondarySideBar.showLabels": false,
-    "workbench.startupEditor": "none",
-    "workbench.tree.enableStickyScroll": true,
-    "workbench.tree.renderIndentGuides": "always",
-    // cmake
-    "cmake.configureOnOpen": false,
-    "cmake.ignoreCMakeListsMissing": true,
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ],
-    "cmake.showConfigureWithDebuggerNotification": false,
-    // git
-    "git.enableSmartCommit": true,
-    "git.openRepositoryInParentFolders": "never",
-    // c/cpp
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format",
-        "editor.indentSize": 2,
-        "editor.tabSize": 2
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
+  "editor.formatOnType": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80],
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  "extensions.ignoreRecommendations": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.enablePersistentSessions": false,
+  "update.showReleaseNotes": false,
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.startupEditor": "none",
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "files.associations": {
+    "*.inc": "cpp"
+  },
+  // cmake
+  "cmake.configureOnOpen": false,
+  "cmake.ignoreCMakeListsMissing": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showConfigureWithDebuggerNotification": false,
+  // git
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  // c/cpp
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.indentSize": 2,
+    "editor.tabSize": 2
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.indentSize": 2,
+    "editor.tabSize": 2
+  },
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "C_Cpp.default.compilerPath": "/usr/bin/clang",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.inlayHints.parameterNames.enabled": true,
+  "C_Cpp.inlayHints.referenceOperator.enabled": true,
+  // haskell
+  "haskell.manageHLS": "GHCup",
+  // json
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
     },
-    "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format",
-        "editor.indentSize": 2,
-        "editor.tabSize": 2
-    },
-    "C_Cpp.clang_format_fallbackStyle": "LLVM",
-    "C_Cpp.default.compilerPath": "/usr/bin/clang",
-    "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.cStandard": "c17",
-    "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
-    "C_Cpp.formatting": "clangFormat",
-    "C_Cpp.inlayHints.parameterNames.enabled": true,
-    "C_Cpp.inlayHints.referenceOperator.enabled": true,
-    // haskell
-    "haskell.manageHLS": "GHCup",
-    // json
-    "[json]": {
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.suggest.insertMode": "replace"
-    },
-    // javascript/typescript
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    // python
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.indentSize": 4,
-        "editor.tabSize": 4
-    },
-    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
-    // rust
-    "rust-analyzer.check.command": "clippy",
-    // log
-    "[log]": {
-        "editor.wordWrap": "on"
-    },
-    // other extensions
-    "bookmarks.saveBookmarksInProject": true,
-    "center-editor-window.offset": 0,
-    "codetour.showMarkers": false,
-    "color-highlight.languages": [
-        "javascript",
-        "typescript",
-        "json",
-        "html",
-        "css",
-        "jsx",
-        "tsx"
-    ],
-    "github.copilot.advanced": {
-        "authProvider": "github"
-    },
-    "github.copilot.enable": {
-        "plaintext": true,
-        "markdown": true
-    },
-    "hexeditor.columnWidth": 16,
-    "hexeditor.defaultEndianness": "little",
-    "hexeditor.inspectorType": "aside",
-    "hexeditor.showDecodedText": true,
-    "makefile.configureOnOpen": false,
-    "workspaceExplorer.workspaceStorageDirectory": "/Users/taiki/vscode-workspaces"
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // javascript/typescript
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  // python
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.indentSize": 4,
+    "editor.tabSize": 4
+  },
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
+  // rust
+  "rust-analyzer.check.command": "clippy",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.indentSize": 4,
+    "editor.tabSize": 4,
+    "editor.rulers": [120]
+  },
+  // log
+  "[log]": {
+    "editor.wordWrap": "on"
+  },
+  // == GitHub Copilot ==
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "rust": false
+  },
+  "chat.agent.maxRequests": 50,
+  // other extensions
+  "bookmarks.saveBookmarksInProject": true,
+  "center-editor-window.offset": 0,
+  "codetour.showMarkers": false,
+  "color-highlight.languages": [
+    "javascript",
+    "typescript",
+    "json",
+    "html",
+    "css",
+    "jsx",
+    "tsx"
+  ],
+  "hexeditor.columnWidth": 16,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "hexeditor.showDecodedText": true,
+  "workspaceExplorer.workspaceStorageDirectory": "/Users/taiki/vscode-workspaces",
+  "makefile.configureOnOpen": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dont-cross-line.languages": ["c", "cpp"],
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

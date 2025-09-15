@@ -1,0 +1,82 @@
+[
+  // == editor ==
+  {
+    // カーソルの移動先を0行目から現在のインデントの開始位置に変更する
+    "key": "ctrl+a",
+    "command": "cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    // セカンダリサイドバーの切り替えを`cmd+shift+b`に変更する
+    "key": "shift+cmd+b",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  // == terminal ==
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+
+  // == file-browser ==
+  // === file-browser/navigation ===
+  {
+    "key": "ctrl+a",
+    "command": "file-browser.stepOut",
+    "when": "inFileBrowser"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-file-browser.actions",
+    "when": "inFileBrowser"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "file-browser.stepIn",
+    "when": "inFileBrowser"
+  },
+  // == file-browseropen ==
+  {
+    "key": "cmd+o",
+    "command": "file-browser.open"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openFileFolder",
+    "when": "isMacNative && openFolderWorkspaceSupport"
+  },
+  // == markdown ==
+  {
+    "key": "cmd+k e",
+    "command": "markdown.showSource",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+k e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "markdownPreviewFocus"
+  }
+]
