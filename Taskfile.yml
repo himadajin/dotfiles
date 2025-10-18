@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  update-vscode-mac:
+    platforms: [darwin]
+    desc: "update vscode/mac/*.json"
+    dir: vscode/mac
+    cmds:
+      - cp "${HOME}/Library/Application Support/Code/User/keybindings.json" .
+      - cp "${HOME}/Library/Application Support/Code/User/settings.json" .
+
+  update-zsh-mac:
+    platforms: [darwin]
+    desc: "update zsh/mac/*"
+    dir: zsh/mac
+    cmds:
+      - cp "${HOME}/.zshenv" .
+      - cp "${HOME}/.zshrc" .
