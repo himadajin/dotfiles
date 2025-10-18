@@ -1,4 +1,3 @@
-
 export path=(
   $path
   "/opt/homebrew/bin"
@@ -9,14 +8,13 @@ export path=(
 
 export fpath=(
   $fpath
-  "${HOME}/.zsh/zsh-completions/src"
   "${HOME}/.zsh/completions"
+  "${HOME}/.zsh/zsh-completions/src"
   "$(brew --prefix)/share/zsh/site-functions"
 )
 
 export cdpath=(
   "${HOME}"
-  "${HOME}/repos"
 )
 
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -127,12 +125,17 @@ alias python="python3.13"
 alias python3="python3.13"
 alias pip="pip3.13"
 alias pip3="pip3.13"
+alias codex="codex --search"
 
 abbr -S c="code" > /dev/null
 abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
-abbr -S clc="clear" > /dev/null
+abbr -S cl="clear" > /dev/null
+
+abbr -S dus="du -sh" > /dev/null
+abbr -S dut="du -ch" > /dev/null
+
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"

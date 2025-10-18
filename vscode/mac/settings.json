@@ -1,27 +1,54 @@
 {
+  // = general =
+  // == editor ==
+  "editor.experimentalGpuAcceleration": "on",
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
   "editor.formatOnType": false,
+  "editor.maxTokenizationLineLength": 15000,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
-  "editor.rulers": [80],
+  "editor.rulers": [80, 100],
   "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
+  // == explorer ==
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "explorer.compactFolders": false,
+  "explorer.confirmPasteNative": false,
   "extensions.ignoreRecommendations": true,
-  "security.workspace.trust.untrustedFiles": "open",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  // == terminal ==
   "terminal.integrated.enablePersistentSessions": false,
-  "update.showReleaseNotes": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  // == workbench ==
   "workbench.colorTheme": "One Dark Pro Night Flat",
   "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
+  // == other ==
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.showReleaseNotes": false,
   "files.associations": {
     "*.inc": "cpp"
   },
-  // cmake
+  // = Extension=
+  // == GitHub Copilot ==
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "rust": false
+  },
+  "chat.agent.maxRequests": 50,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  // == cmake ==
   "cmake.configureOnOpen": false,
   "cmake.ignoreCMakeListsMissing": true,
   "cmake.pinnedCommands": [
@@ -29,10 +56,31 @@
     "workbench.action.tasks.runTask"
   ],
   "cmake.showConfigureWithDebuggerNotification": false,
-  // git
+  // == git ==
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
-  // c/cpp
+  // == other extensions ==
+  "bookmarks.saveBookmarksInProject": true,
+  "center-editor-window.offset": 0,
+  "codetour.showMarkers": false,
+  "color-highlight.languages": [
+    "javascript",
+    "typescript",
+    "json",
+    "html",
+    "css",
+    "jsx",
+    "tsx"
+  ],
+  "dont-cross-line.languages": ["c", "cpp"],
+  "hexeditor.columnWidth": 16,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "hexeditor.showDecodedText": true,
+  "makefile.configureOnOpen": false,
+  "lldb.suppressUpdateNotifications": true,
+  // = language =
+  // == c, cpp ==
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format",
     "editor.indentSize": 2,
@@ -51,85 +99,51 @@
   "C_Cpp.formatting": "clangFormat",
   "C_Cpp.inlayHints.parameterNames.enabled": true,
   "C_Cpp.inlayHints.referenceOperator.enabled": true,
-  // haskell
-  "haskell.manageHLS": "GHCup",
-  // json
-  "[json]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace",
+  // == css ==
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // javascript/typescript
+  // == haskell ==
+  "haskell.manageHLS": "GHCup",
+  // == json, jsonc ==
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace",
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // == javascript, typescript, typescriptreact ==
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  // python
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // == log ==
+  "[log]": {
+    "editor.wordWrap": "on"
+  },
+  // == python ==
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.indentSize": 4,
     "editor.tabSize": 4
   },
-  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
-  // rust
-  "rust-analyzer.check.command": "clippy",
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.14",
+  // == rust ==
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.indentSize": 4,
     "editor.tabSize": 4,
     "editor.rulers": [120]
   },
-  // log
-  "[log]": {
-    "editor.wordWrap": "on"
-  },
-  // == GitHub Copilot ==
-  "github.copilot.advanced": {
-    "authProvider": "github"
-  },
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": true,
-    "scminput": false,
-    "rust": false
-  },
-  "chat.agent.maxRequests": 50,
-  // other extensions
-  "bookmarks.saveBookmarksInProject": true,
-  "center-editor-window.offset": 0,
-  "codetour.showMarkers": false,
-  "color-highlight.languages": [
-    "javascript",
-    "typescript",
-    "json",
-    "html",
-    "css",
-    "jsx",
-    "tsx"
-  ],
-  "hexeditor.columnWidth": 16,
-  "hexeditor.defaultEndianness": "little",
-  "hexeditor.inspectorType": "aside",
-  "hexeditor.showDecodedText": true,
-  "workspaceExplorer.workspaceStorageDirectory": "/Users/taiki/vscode-workspaces",
-  "makefile.configureOnOpen": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "dont-cross-line.languages": ["c", "cpp"],
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "rust-analyzer.check.command": "clippy"
+  // = other settings =
 }
