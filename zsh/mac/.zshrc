@@ -4,6 +4,7 @@ export path=(
   "/opt/homebrew/opt/binutils/bin"
   "${HOME}/local/bin"
   "${HOME}/local/llvm/llvm@20/bin"
+  "${HOME}/repos/dotfiles/scripts"
 )
 
 export fpath=(
@@ -37,14 +38,14 @@ setup_zsh_auto_complete() {
   # '':     Always show completions.
   # '..##': Don't show completions when the input consists of two or more dots.
 
-  zstyle ':autocomplete:*' list-lines 16  # int
+  zstyle ':autocomplete:*' list-lines 10  # int
   # If there are fewer than this many lines below the prompt, move the prompt up
   # to make room for showing this many lines of completions (approximately).
 
-  zstyle ':autocomplete:history-search:*' list-lines 16  # int
+  zstyle ':autocomplete:history-search:*' list-lines 10  # int
   # Show this many history lines when pressing ↑.
 
-  zstyle ':autocomplete:history-incremental-search-*:*' list-lines 16  # int
+  zstyle ':autocomplete:history-incremental-search-*:*' list-lines 10  # int
   # Show this many history lines when pressing ⌃R or ⌃S.
 
   zstyle ':autocomplete:*' recent-dirs cdr
@@ -116,26 +117,29 @@ setopt hist_ignore_dups
 setopt hist_reduce_blanks
 setopt share_history
 setopt append_history
+LISTMAX=1000
 
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
 alias ll="ls --color=auto -lha"
 
-alias python="python3.13"
-alias python3="python3.13"
-alias pip="pip3.13"
-alias pip3="pip3.13"
+alias python3="python3.14"
+alias pip3="pip3.14"
+alias pip="pip3"
+alias python="python3"
 alias codex="codex --search"
 
 abbr -S c="code" > /dev/null
+abbr -S g="git" > /dev/null
 abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
+abbr -S ch="cd ~" > /dev/null
+abbr -S tm="tmux" > /dev/null
 
 abbr -S dus="du -sh" > /dev/null
 abbr -S dut="du -ch" > /dev/null
-
 
 # setup nvm
 export NVM_DIR="$HOME/.nvm"
