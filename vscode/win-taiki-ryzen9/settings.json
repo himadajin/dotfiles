@@ -5,21 +5,46 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 120],
-  "editor.stickyScroll.enabled": true,
   "editor.scrollOnMiddleClick": true,
+  "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "[One Dark Pro Night Flat]": {
+      "comments": "#afafaf"
+    }
+  },
   "editor.wordWrap": "off",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "explorer.compactFolders": false,
   "extensions.ignoreRecommendations": true,
   "security.workspace.trust.untrustedFiles": "open",
-  "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.suggest.enabled": false,
   "update.showReleaseNotes": false,
   "workbench.colorTheme": "One Dark Pro Night Flat",
-  "workbench.editor.wrapTabs": true,
-  "workbench.secondarySideBar.showLabels": false,
+  "workbench.colorCustomizations": {
+    "[One Dark Pro Night Flat]": {
+      "editor.foreground": "#f0f0f0",
+      // background colors
+      "editor.background": "#101010",
+      "terminal.background": "#101010",
+      "sideBar.background": "#101010",
+      "activityBar.background": "#101010",
+      // border colors
+      "activityBar.border": "#9696af",
+      "editorGroup.border": "#9696af",
+      "input.border": "#9696af",
+      "panel.border": "#9696af",
+      "statusBar.border": "#9696af",
+      "sideBar.border": "#9696af",
+      "sideBarSectionHeader.border": "#9696af",
+      "tab.border": "#9696af",
+      "titleBar.border": "#9696af"
+    }
+  },
+  "workbench.secondarySideBar.showLabels": true,
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
@@ -41,7 +66,7 @@
   "C_Cpp.inlayHints.referenceOperator.enabled": true,
   // == Haskell ==
   "haskell.manageHLS": "GHCup",
-  // == JSON/JSONC ==
+  // == json ==
   "[json]": {
     "editor.quickSuggestions": {
       "strings": true
@@ -49,6 +74,7 @@
     "editor.suggest.insertMode": "replace",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // == jsonc ==
   "[jsonc]": {
     "editor.quickSuggestions": {
       "strings": true
@@ -82,10 +108,11 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // == JavaScript/TypeScript ==
+  // == JavaScript ==
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // == TypeScript React ==
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -112,6 +139,7 @@
     "tablegen": false,
     "python": true
   },
+  "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "Follow the Semantic Commit Message convention strictly. Format: <type>(<scope>): <subject>."
@@ -146,8 +174,5 @@
   "hexeditor.defaultEndianness": "little",
   "hexeditor.inspectorType": "aside",
   "hexeditor.showDecodedText": true,
-  "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.chat.agent.thinkingTool": true,
-  "chat.mcp.autostart": "newAndOutdated",
-  "terminal.integrated.suggest.enabled": false
+  "chat.mcp.autostart": "newAndOutdated"
 }
