@@ -1,6 +1,7 @@
 {
   // = general =
   // == editor ==
+  "editor.fontSize": 11.5,
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
   "editor.formatOnType": false,
   "editor.maxTokenizationLineLength": 15000,
@@ -9,6 +10,11 @@
   "editor.rulers": [80, 100],
   "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "[One Dark Pro Night Flat]": {
+      "comments": "#afafaf"
+    }
+  },
   // == explorer ==
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -21,8 +27,29 @@
   // == terminal ==
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
   // == workbench ==
   "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.colorCustomizations": {
+    "[One Dark Pro Night Flat]": {
+      "editor.foreground": "#f0f0f0",
+      // background colors
+      "editor.background": "#101010",
+      "terminal.background": "#101010",
+      "sideBar.background": "#101010",
+      "activityBar.background": "#101010",
+      // border colors
+      "activityBar.border": "#9696af",
+      "editorGroup.border": "#9696af",
+      "input.border": "#9696af",
+      "panel.border": "#9696af",
+      "statusBar.border": "#9696af",
+      "sideBar.border": "#9696af",
+      "sideBarSectionHeader.border": "#9696af",
+      "tab.border": "#9696af",
+      "titleBar.border": "#9696af"
+    }
+  },
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
@@ -148,6 +175,6 @@
     "editor.tabSize": 4,
     "editor.rulers": [120]
   },
-  "rust-analyzer.check.command": "clippy"
+  "rust-analyzer.check.command": "clippy",
   // = other settings =
 }
