@@ -32,13 +32,13 @@ tasks:
 
   update-zsh:
     cmds:
-      - task: update-zsh-mac
-        platforms: [darwin]
+      - task: update-zsh-unix
+        platforms: [darwin, linux]
 
 
-  update-zsh-mac:
+  update-zsh-unix:
     internal: true
-    platforms: [darwin]
+    platforms: [darwin, linux]
     dir: "./zsh/{{.MACHINE_NAME}}"
     cmds:
       - cp "${HOME}/.zshenv" .
