@@ -8,21 +8,37 @@ tasks:
     cmds:
       - task: update-vscode-mac
         platforms: [darwin]
+      - task: update-vscode-win
+        platforms: [windows]
+
 
   update-vscode-mac:
     internal: true
+    platforms: [darwin]
     dir: "./vscode/{{.MACHINE_NAME}}"
     cmds:
       - cp "${HOME}/Library/Application Support/Code/User/keybindings.json" .
       - cp "${HOME}/Library/Application Support/Code/User/settings.json" .
+
+
+  update-vscode-win:
+    internal: true
+    platforms: [windows]
+    dir: "./vscode/{{.MACHINE_NAME}}"
+    cmds:
+      - cp "${HOME}/AppData/Roaming/Code/User/keybindings.json" .
+      - cp "${HOME}/AppData/Roaming/Code/User/settings.json" .
+
 
   update-zsh:
     cmds:
       - task: update-zsh-mac
         platforms: [darwin]
 
+
   update-zsh-mac:
     internal: true
+    platforms: [darwin]
     dir: "./zsh/{{.MACHINE_NAME}}"
     cmds:
       - cp "${HOME}/.zshenv" .
