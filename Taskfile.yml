@@ -1,18 +1,29 @@
 version: '3'
 
+dotenv:
+  - ".env"
+
 tasks:
+  update-vscode:
+    cmds:
+      - task: update-vscode-mac
+        platforms: [darwin]
+
   update-vscode-mac:
-    platforms: [darwin]
-    desc: "update vscode/mac/*.json"
-    dir: vscode/mac
+    internal: true
+    dir: "./vscode/{{.MACHINE_NAME}}"
     cmds:
       - cp "${HOME}/Library/Application Support/Code/User/keybindings.json" .
       - cp "${HOME}/Library/Application Support/Code/User/settings.json" .
 
+  update-zsh:
+    cmds:
+      - task: update-zsh-mac
+        platforms: [darwin]
+
   update-zsh-mac:
-    platforms: [darwin]
-    desc: "update zsh/mac/*"
-    dir: zsh/mac
+    internal: true
+    dir: "./zsh/{{.MACHINE_NAME}}"
     cmds:
       - cp "${HOME}/.zshenv" .
       - cp "${HOME}/.zshrc" .
