@@ -1,23 +1,4 @@
-export path=(
-  $path
-  "/opt/homebrew/bin"
-  "/opt/homebrew/opt/binutils/bin"
-  "${HOME}/local/bin"
-  "${HOME}/local/llvm/llvm@20/bin"
-  "${HOME}/repos/dotfiles/scripts"
-)
-
-export fpath=(
-  $fpath
-  "${HOME}/.zsh/completions"
-  "${HOME}/.zsh/zsh-completions/src"
-  "$(brew --prefix)/share/zsh/site-functions"
-)
-
-export cdpath=(
-  "${HOME}"
-)
-
+# = zsh =
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 
@@ -119,6 +100,29 @@ setopt share_history
 setopt append_history
 LISTMAX=1000
 
+# = environment variables =
+export path=(
+  $path
+  "/opt/homebrew/bin"
+  "/opt/homebrew/opt/binutils/bin"
+  "${HOME}/local/bin"
+  "${HOME}/local/llvm/llvm@20/bin"
+  "${HOME}/repos/dotfiles/scripts"
+  "${HOME}/.antigravity/antigravity/bin"
+)
+
+export fpath=(
+  $fpath
+  "${HOME}/.zsh/completions"
+  "${HOME}/.zsh/zsh-completions/src"
+  "$(brew --prefix)/share/zsh/site-functions"
+)
+
+export cdpath=(
+  "${HOME}"
+)
+
+# = aliases =
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
 alias ll="ls --color=auto -lha"
@@ -141,8 +145,9 @@ abbr -S tm="tmux" > /dev/null
 abbr -S dus="du -sh" > /dev/null
 abbr -S dut="du -ch" > /dev/null
 
-# setup nvm
+# = nvm =
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 
+# = starship =
 eval "$(starship init zsh)"
