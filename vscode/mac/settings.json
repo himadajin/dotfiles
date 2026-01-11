@@ -55,12 +55,23 @@
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
   // == other ==
-  "security.workspace.trust.untrustedFiles": "open",
-  "update.showReleaseNotes": false,
   "files.associations": {
     "*.inc": "cpp"
   },
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.showReleaseNotes": false,
   // = Extension=
+  // == cmake ==
+  "cmake.configureOnOpen": false,
+  "cmake.ignoreCMakeListsMissing": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showConfigureWithDebuggerNotification": false,
+  // == git ==
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
   // == GitHub Copilot ==
   "chat.agent.maxRequests": 50,
   "github.copilot.enable": {
@@ -75,17 +86,9 @@
   "github.copilot.chat.commitMessageGeneration.instructions": [
     { "text": "Use conventional commit message format." }
   ],
-  // == cmake ==
-  "cmake.configureOnOpen": false,
-  "cmake.ignoreCMakeListsMissing": true,
-  "cmake.pinnedCommands": [
-    "workbench.action.tasks.configureTaskRunner",
-    "workbench.action.tasks.runTask"
-  ],
-  "cmake.showConfigureWithDebuggerNotification": false,
-  // == git ==
-  "git.enableSmartCommit": true,
-  "git.openRepositoryInParentFolders": "never",
+  // == GitLens ==
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   // == other extensions ==
   "bookmarks.saveBookmarksInProject": true,
   "center-editor-window.offset": 0,

@@ -1,3 +1,4 @@
+# = environment variables =
 export path=(
   $path
   "/opt/homebrew/bin"
@@ -5,6 +6,7 @@ export path=(
   "${HOME}/local/bin"
   "${HOME}/local/llvm/llvm@20/bin"
   "${HOME}/repos/dotfiles/scripts"
+  "${HOME}/.antigravity/antigravity/bin"
 )
 
 export fpath=(
@@ -18,8 +20,8 @@ export cdpath=(
   "${HOME}"
 )
 
+# = zsh =
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 
 setup_zsh_auto_complete() {
   skip_global_compinit=1
@@ -119,6 +121,7 @@ setopt share_history
 setopt append_history
 LISTMAX=1000
 
+# = aliases =
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
 alias ll="ls --color=auto -lha"
@@ -127,8 +130,9 @@ alias python3="python3.14"
 alias pip3="pip3.14"
 alias pip="pip3"
 alias python="python3"
-alias codex="codex --search"
 
+# = zsh-abbr =
+source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 abbr -S c="code" > /dev/null
 abbr -S g="git" > /dev/null
 abbr -S m="make" > /dev/null
@@ -137,11 +141,15 @@ abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
 abbr -S ch="cd ~" > /dev/null
 abbr -S tm="tmux" > /dev/null
-
 abbr -S dus="du -sh" > /dev/null
 abbr -S dut="du -ch" > /dev/null
 
-# setup nvm
+# = completions =
+eval "$(codex completion zsh)"
+eval "$(task --completion zsh)"
+eval "$(uv generate-shell-completion zsh)"
+
+# = other settings =
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 

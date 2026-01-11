@@ -1,68 +1,71 @@
-# Building LLVM with CMake — LLVM 21.1.2 documentation
-# https://releases.llvm.org/21.1.2/docs/CMake.html
+# Building LLVM with CMake — LLVM 21.1.0 documentation
+# https://releases.llvm.org/21.1.0/docs/CMake.html
 
 version: "3"
+vars:
+  INSTALL_PREFIX: "{{.HOME}}/local/llvm-21.1.8"
+
 tasks:
-  configure-release:
+  release:configure:
     desc: "configure release build"
     vars:
       args: >-
         -G Ninja
-        -S llvm-project/llvm
-        -B llvm-project/build/release
+        -S llvm
+        -B build/release
         -DCMAKE_BUILD_TYPE=Release
-        -DCMAKE_INSTALL_PREFIX={{.HOME}}/local/llvm/llvm@21
+        -DCMAKE_INSTALL_PREFIX={{.INSTALL_PREFIX}}
         -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
         -DLLVM_CCACHE_BUILD=ON
         -DLLVM_ENABLE_PROJECTS="clang;lld"
         -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind"
         -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV;MSP430;X86"
     cmd: cmake {{ .args }}
-  configure-debug:
+  debug:configure:
     desc: "configure debug build"
     vars:
       args: >-
         -G Ninja
-        -S llvm-project/llvm
-        -B llvm-project/build/debug
+        -S llvm
+        -B build/debug
         -DCMAKE_BUILD_TYPE=Debug
-        -DCMAKE_INSTALL_PREFIX={{.HOME}}/local/llvm/llvm@21
+        -DCMAKE_INSTALL_PREFIX={{.INSTALL_PREFIX}}
         -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
         -DLLVM_CCACHE_BUILD=ON
         -DLLVM_ENABLE_PROJECTS="clang;lld"
         -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind"
-        -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV;MSP430"
+        -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV;MSP430;X86"
     cmd: cmake {{ .args }}
 
-  build-release:
+  release:build:
     desc: "build release"
-    dir: llvm-project/build/release
+    dir: build/release
     preconditions:
       - sh: test -f build.ninja
         msg: '"build.ninja" does not exist.'
     cmd: ninja
 
-  build-debug:
+  debug:build:
     desc: "build debug"
-    dir: llvm-project/build/debug
+    dir: build/debug
     preconditions:
       - sh: test -f build.ninja
         msg: '"build.ninja" does not exist.'
     cmd: ninja
 
-  rm-release:
+  release:clean:
     desc: "remove release build artifacts"
-    cmd: rm -rf llvm-project/build/release
+    cmd: rm -rf build/release
 
-  rm-debug:
+  debug:clean:
     desc: "remove debug build artifacts"
-    cmd: rm -rf llvm-project/build/debug
+    cmd: rm -rf build/debug
 
-  install:
+  release:install:
     desc: "install release"
-    dir: llvm-project/build/release
+    dir: build/release
     cmd: ninja install
 
-  uninstall:
+  release:uninstall:
     desc: "uninstall release"
-    cmd: rm -rf {{.HOME}}/local/llvm/llvm@21
+    cmd: rm -rf {{.INSTALL_PREFIX}}
