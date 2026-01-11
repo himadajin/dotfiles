@@ -50,6 +50,7 @@
       "titleBar.border": "#9696af"
     }
   },
+  "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
@@ -175,6 +176,6 @@
     "editor.tabSize": 4,
     "editor.rulers": [120]
   },
-  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.check.command": "clippy"
   // = other settings =
 }
