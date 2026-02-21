@@ -153,4 +153,5 @@ eval "$(uv generate-shell-completion zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 
+# = starship =
 eval "$(starship init zsh)"
