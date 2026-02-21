@@ -3,19 +3,19 @@
     {
       "name": "Mac",
       "includePath": [
-        "${workspaceFolder}/llvm-project/llvm/include",
-        "${workspaceFolder}/llvm-project/llvm/lib/Target/AArch64",
-        "${workspaceFolder}/llvm-project/llvm/lib/Target/RISCV",
-        "${workspaceFolder}/llvm-project/llvm/lib/Target/X86",
-        "${workspaceFolder}/llvm-project/llvm/lib/Target/MSP430",
-        "${workspaceFolder}/llvm-project/build/release/include",
-        "${workspaceFolder}/llvm-project/build/release/lib/Target/AArch64",
-        "${workspaceFolder}/llvm-project/build/release/lib/Target/RISCV",
-        "${workspaceFolder}/llvm-project/build/release/lib/Target/X86",
-        "${workspaceFolder}/llvm-project/build/release/lib/Target/MSP430",
-        "${workspaceFolder}/llvm-project/third-party/benchmark/include",
-        "${workspaceFolder}/llvm-project/clang/include",
-        "${workspaceFolder}/llvm-project/build/release/tools/clang/include"
+        "${workspaceFolder}/llvm/include",
+        "${workspaceFolder}/llvm/lib/Target/AArch64",
+        "${workspaceFolder}/llvm/lib/Target/RISCV",
+        "${workspaceFolder}/llvm/lib/Target/X86",
+        "${workspaceFolder}/llvm/lib/Target/MSP430",
+        "${workspaceFolder}/build/release/include",
+        "${workspaceFolder}/build/release/lib/Target/AArch64",
+        "${workspaceFolder}/build/release/lib/Target/RISCV",
+        "${workspaceFolder}/build/release/lib/Target/X86",
+        "${workspaceFolder}/build/release/lib/Target/MSP430",
+        "${workspaceFolder}/third-party/benchmark/include",
+        "${workspaceFolder}/clang/include",
+        "${workspaceFolder}/build/release/tools/clang/include"
       ],
       "defines": [],
       "macFrameworkPath": [

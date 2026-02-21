@@ -1,0 +1,67 @@
+# Building LLVM with CMake — LLVM 12 documentation
+# https://releases.llvm.org/12.0.1/docs/CMake.html
+
+version: "3"
+
+tasks:
+  debug:configure:
+    desc: "configure debug build"
+    vars:
+      args: >-
+        -G Ninja
+        -S llvm
+        -B build/debug
+        -DCMAKE_BUILD_TYPE=Debug
+        -DCMAKE_INSTALL_PREFIX={{.HOME}}/local/llvm-12.0.1
+        -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
+        -DLLVM_CCACHE_BUILD=ON
+        -DLLVM_ENABLE_PROJECTS="clang;lld;libcxx;libcxxabi;libunwind"
+        -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV"
+    cmd: cmake {{ .args }}
+
+  release:configure:
+    desc: "configure release build"
+    vars:
+      args: >-
+        -G Ninja
+        -S llvm
+        -B build/release
+        -DCMAKE_BUILD_TYPE=Release
+        -DCMAKE_INSTALL_PREFIX={{.HOME}}/local/llvm-12.0.1
+        -DDEFAULT_SYSROOT="$(xcrun --sdk macosx --show-sdk-path)"
+        -DLLVM_CCACHE_BUILD=ON
+        -DLLVM_ENABLE_PROJECTS="clang;lld;libcxx;libcxxabi;libunwind"
+        -DLLVM_TARGETS_TO_BUILD="AArch64;RISCV"
+    cmd: cmake {{ .args }}
+
+  debug:build:
+    desc: "build debug"
+    dir: build/debug
+    preconditions:
+      - sh: test -f build.ninja
+        msg: '"build.ninja" does not exist.'
+    cmd: ninja
+
+  release:build:
+    desc: "build release"
+    dir: build/release
+    preconditions:
+      - sh: test -f build.ninja
+        msg: '"build.ninja" does not exist.'
+    cmd: ninja
+
+  debug:clean:
+    desc: "remove debug build artifacts"
+    cmd: rm -rf build/debug
+
+  release:clean:
+    desc: "remove release build artifacts"
+    cmd: rm -rf build/release
+
+  release:install:
+    desc: "install release"
+    dir: build/release
+    preconditions:
+      - sh: test -f build.ninja
+        msg: '"build.ninja" does not exist.'
+    cmd: sudo ninja install
