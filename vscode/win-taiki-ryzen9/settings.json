@@ -45,6 +45,7 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.initialHint": false,
   "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
   // == workbench ==
   "workbench.secondarySideBar.showLabels": false,
