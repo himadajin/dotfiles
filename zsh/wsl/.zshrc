@@ -112,9 +112,9 @@ export RISCV="${HOME}/opt/riscv"
 export path=(
   $path
   "/mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin"
-  "/opt/mold/bin"
   "/opt/llvm/llvm@19/bin"
   "${HOME}/.local/bin"
+  "${HOME}/local/mold/bin"
   "${HOME}/opt/bin"
   "${RISCV}/bin"
 )
@@ -149,10 +149,9 @@ export NVM_DIR="$HOME/.nvm"
 # setup rust
 . "${HOME}/.cargo/env"
 
-# setup completion for go-task
+# setup completions
+eval "$(codex completion zsh)"
 eval "$(task --completion zsh)"
-
-# setup completion for uv
 eval "$(uv generate-shell-completion zsh)"
 
 # setup starship
