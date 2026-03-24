@@ -1,28 +1,11 @@
 {
   // = VSCode =
-  "editor.fontSize": 13,
-  "editor.fontFamily": "Consolas, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
-  "editor.rulers": [80, 120],
-  "editor.scrollOnMiddleClick": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.tabSize": 2,
+  // == color theme ==
   "editor.tokenColorCustomizations": {
     "[One Dark Pro Night Flat]": {
       "comments": "#afafaf"
     }
   },
-  "editor.wordWrap": "off",
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
-  "explorer.compactFolders": false,
-  "extensions.ignoreRecommendations": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.suggest.enabled": false,
-  "update.showReleaseNotes": false,
   "workbench.colorTheme": "One Dark Pro Night Flat",
   "workbench.colorCustomizations": {
     "[One Dark Pro Night Flat]": {
@@ -44,90 +27,39 @@
       "titleBar.border": "#9696af"
     }
   },
-  "workbench.secondarySideBar.showLabels": true,
+  // == editor ==
+  "editor.fontSize": 11,
+  "editor.fontFamily": "Consolas, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80, 120],
+  "editor.scrollOnMiddleClick": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+  // == explorer ==
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // == terminal ==
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.initialHint": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.suggest.enabled": false,
+  // == workbench ==
+  "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
-  // = Languages =
-  // == C/C++ ==
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.wordWrap": "on"
-  },
-  "[cpp]": {
-    "editor.defaultFormatter": "xaver.clang-format",
-    "editor.wordWrap": "on"
-  },
-  "C_Cpp.clang_format_fallbackStyle": "LLVM",
-  "C_Cpp.default.cppStandard": "c++17",
-  "C_Cpp.default.cStandard": "c17",
-  "C_Cpp.formatting": "clangFormat",
-  "C_Cpp.inlayHints.parameterNames.enabled": true,
-  "C_Cpp.inlayHints.referenceOperator.enabled": true,
-  // == Haskell ==
-  "haskell.manageHLS": "GHCup",
-  // == json ==
-  "[json]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // == jsonc ==
-  "[jsonc]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // == Markdown ==
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.indentSize": "tabSize",
-    "editor.tabSize": 4
-  },
-  // == Python ==
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnType": false,
-    "editor.indentSize": "tabSize",
-    "editor.tabSize": 4
-  },
-  // == Rust ==
-  "rust-analyzer.check.command": "clippy",
-  // == Tablegen ==
-  "[tablegen]": {
-    "editor.rulers": [100]
-  },
-  // == Web Development ==
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // == JavaScript ==
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // == TypeScript React ==
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // = Development Tools =
-  // == CMake ==
-  "cmake.configureOnOpen": false,
-  "cmake.ignoreCMakeListsMissing": true,
-  "cmake.pinnedCommands": [
-    "workbench.action.tasks.configureTaskRunner",
-    "workbench.action.tasks.runTask"
-  ],
-  "cmake.showConfigureWithDebuggerNotification": false,
-  // == Git ==
-  "git.enableSmartCommit": true,
-  "git.openRepositoryInParentFolders": "never",
+  // = other ==
+  "extensions.ignoreRecommendations": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.showReleaseNotes": false,
+  // = AI =
+  // == chat ==
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.viewSessions.orientation": "stacked",
+  "chat.agent.maxRequests": 30,
   // == Github Copilot ==
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
@@ -157,8 +89,92 @@
       "text": "Wrap body at 72 chars and explain the motivation and context using bullet points."
     }
   ],
+  // = Languages =
+  // == C/C++ ==
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.wordWrap": "on"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.wordWrap": "on"
+  },
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.inlayHints.parameterNames.enabled": true,
+  "C_Cpp.inlayHints.referenceOperator.enabled": true,
+  // == Haskell ==
+  "haskell.manageHLS": "GHCup",
+  // == json ==
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  // == Markdown ==
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.indentSize": "tabSize",
+    "editor.tabSize": 4
+  },
+  // == Python ==
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": false,
+    "editor.indentSize": "tabSize",
+    "editor.tabSize": 4
+  },
+  // == Rust ==
+  "rust-analyzer.check.command": "clippy",
+  // == Tablegen ==
+  "[tablegen]": {
+    "editor.rulers": [100]
+  },
+  // == Web Development ==
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // = Development Tools =
+  // == CMake ==
+  "cmake.configureOnOpen": false,
+  "cmake.ignoreCMakeListsMissing": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showConfigureWithDebuggerNotification": false,
+  // == Git ==
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  // == Hex Editor ==
+  "hexeditor.columnWidth": 16,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "hexeditor.showDecodedText": true,
   // = other extensions =
-  "center-editor-window.offset": 0,
   "color-highlight.languages": ["!c", "!cpp", "!llvm", "!tablegen", "*"],
   "dontCrossLine.excludeLanguages": [
     "markdown",
@@ -169,10 +185,5 @@
     "log",
     "llvm",
     "typescript"
-  ],
-  "hexeditor.columnWidth": 16,
-  "hexeditor.defaultEndianness": "little",
-  "hexeditor.inspectorType": "aside",
-  "hexeditor.showDecodedText": true,
-  "chat.mcp.autostart": "newAndOutdated"
+  ]
 }
