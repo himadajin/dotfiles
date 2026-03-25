@@ -1,44 +1,20 @@
 {
-  // = general =
-  // == editor ==
-  "editor.fontSize": 11.5,
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
-  "editor.formatOnType": false,
-  "editor.maxTokenizationLineLength": 15000,
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
-  "editor.rulers": [80, 100],
-  "editor.stickyScroll.enabled": true,
-  "editor.tabSize": 2,
+  // = VSCode =
+  // == Color Theme ==
   "editor.tokenColorCustomizations": {
     "[One Dark Pro Night Flat]": {
       "comments": "#afafaf"
     }
   },
-  // == explorer ==
-  "explorer.compactFolders": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmPasteNative": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "extensions.ignoreRecommendations": true,
-  // == terminal ==
-  "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.suggest.enabled": false,
-  // == workbench ==
-  "workbench.colorTheme": "One Dark Pro Night Flat",
   "workbench.colorCustomizations": {
     "[One Dark Pro Night Flat]": {
       "editor.foreground": "#f0f0f0",
-      // background colors
+      // Background Colors
       "editor.background": "#101010",
       "terminal.background": "#101010",
       "sideBar.background": "#101010",
       "activityBar.background": "#101010",
-      // border colors
+      // Border Colors
       "activityBar.border": "#9696af",
       "editorGroup.border": "#9696af",
       "input.border": "#9696af",
@@ -50,30 +26,56 @@
       "titleBar.border": "#9696af"
     }
   },
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  // == Editor ==
+  "editor.fontSize": 11.5,
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.maxTokenizationLineLength": 15000,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80, 100],
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  // == Explorer ==
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "extensions.ignoreRecommendations": true,
+  // == Terminal ==
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
+  // == Workbench ==
   "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "always",
-  // == other ==
+  // == Other ==
   "files.associations": {
+    "*.gen": "cpp",
     "*.inc": "cpp"
   },
+  "files.autoSaveWorkspaceFilesOnly": true,
   "security.workspace.trust.untrustedFiles": "open",
   "update.showReleaseNotes": false,
-  // = Extension=
-  // == cmake ==
-  "cmake.configureOnOpen": false,
-  "cmake.ignoreCMakeListsMissing": true,
-  "cmake.pinnedCommands": [
-    "workbench.action.tasks.configureTaskRunner",
-    "workbench.action.tasks.runTask"
-  ],
-  "cmake.showConfigureWithDebuggerNotification": false,
-  // == git ==
-  "git.enableSmartCommit": true,
-  "git.openRepositoryInParentFolders": "never",
-  // == GitHub Copilot ==
+  // = AI =
+  // == Chat ==
   "chat.agent.maxRequests": 50,
+  "chat.tools.edits.autoApprove": {
+    "": true
+  },
+  "chat.viewSessions.orientation": "stacked",
+  // == Claude Code ==
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.selectedModel": "opus",
+  "claudeCode.useTerminal": true,
+  // == GitHub Copilot ==
   "github.copilot.enable": {
     "*": true,
     "plaintext": true,
@@ -86,32 +88,8 @@
   "github.copilot.chat.commitMessageGeneration.instructions": [
     { "text": "Use conventional commit message format." }
   ],
-  // == GitLens ==
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-  // == other extensions ==
-  "bookmarks.saveBookmarksInProject": true,
-  "center-editor-window.offset": 0,
-  "codetour.showMarkers": false,
-  "color-highlight.languages": [
-    "javascript",
-    "typescript",
-    "json",
-    "html",
-    "css",
-    "jsx",
-    "tsx"
-  ],
-  "dont-cross-line.languages": ["c", "cpp"],
-  "hexeditor.columnWidth": 16,
-  "hexeditor.defaultEndianness": "little",
-  "hexeditor.inspectorType": "aside",
-  "hexeditor.showDecodedText": true,
-  "indentRainbow.errorColor": "rgba(128,32,32,0.2)",
-  "makefile.configureOnOpen": false,
-  "lldb.suppressUpdateNotifications": true,
-  // = language =
-  // == c, cpp ==
+  // = Languages =
+  // == C/C++ ==
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format",
     "editor.indentSize": 2,
@@ -130,17 +108,17 @@
   "C_Cpp.formatting": "clangFormat",
   "C_Cpp.inlayHints.parameterNames.enabled": true,
   "C_Cpp.inlayHints.referenceOperator.enabled": true,
-  // == css ==
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // == haskell ==
+  // == CMake ==
+  "cmake.configureOnOpen": false,
+  "cmake.ignoreCMakeListsMissing": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showConfigureWithDebuggerNotification": false,
+  // == Haskell ==
   "haskell.manageHLS": "GHCup",
-  // == html ==
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // == json, jsonc ==
+  // == Json ==
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.suggest.insertMode": "replace",
@@ -151,7 +129,34 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // == javascript, typescript, typescriptreact ==
+  // == Log ==
+  "[log]": {
+    "editor.wordWrap": "on"
+  },
+  // == Makefile ==
+  "makefile.configureOnOpen": false,
+  // == Python ==
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.indentSize": 4,
+    "editor.tabSize": 4
+  },
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.14",
+  // == Rust ==
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.indentSize": 4,
+    "editor.rulers": [120],
+    "editor.tabSize": 4
+  },
+  "rust-analyzer.check.command": "clippy",
+  // == Web Development ==
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -161,24 +166,39 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // == log ==
-  "[log]": {
-    "editor.wordWrap": "on"
-  },
-  // == python ==
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.indentSize": 4,
-    "editor.tabSize": 4
-  },
-  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.14",
-  // == rust ==
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.indentSize": 4,
-    "editor.tabSize": 4,
-    "editor.rulers": [120]
-  },
-  "rust-analyzer.check.command": "clippy"
+  // = Extension =
+  // == Bookmarks ==
+  "bookmarks.saveBookmarksInProject": true,
+  // == Center Editor Window ==
+  "center-editor-window.offset": 0,
+  // == code tour ==
+  "codetour.showMarkers": false,
+  // == Color Highlight ==
+  "color-highlight.languages": [
+    "javascript",
+    "typescript",
+    "json",
+    "html",
+    "css",
+    "jsx",
+    "tsx"
+  ],
+  // == Git ==
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  // == GitLens ==
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.rebaseEditor.openOnPausedRebase": false,
+  // == Hex Editor ==
+  "hexeditor.columnWidth": 16,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "hexeditor.showDecodedText": true,
+  // == Indent Rainbow ==
+  "indentRainbow.errorColor": "rgba(128,32,32,0.2)",
+  // == lldb ==
+  "lldb.suppressUpdateNotifications": true,
   // = other settings =
+  "dont-cross-line.languages": ["c", "cpp"]
 }
