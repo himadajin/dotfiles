@@ -1,29 +1,19 @@
-# = environment variables =
+# = Environment Variables =
 export path=(
   $path
   "/opt/homebrew/bin"
   "/opt/homebrew/opt/binutils/bin"
+  "${HOME}/.local/bin"
   "${HOME}/local/bin"
   "${HOME}/local/llvm/llvm@20/bin"
   "${HOME}/repos/dotfiles/scripts"
   "${HOME}/.antigravity/antigravity/bin"
 )
 
-export fpath=(
-  $fpath
-  "${HOME}/.zsh/completions"
-  "${HOME}/.zsh/zsh-completions/src"
-  "$(brew --prefix)/share/zsh/site-functions"
-)
-
-export cdpath=(
-  "${HOME}"
-)
-
 # = zsh =
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-setup_zsh_auto_complete() {
+_setup_zsh_auto_complete() {
   skip_global_compinit=1
 
   zstyle ':autocomplete:*' default-context ''
@@ -107,8 +97,8 @@ setup_zsh_auto_complete() {
   # .accept-line: Accept command line.
   # accept-line:  Accept selection and exit menu.
 }
-setup_zsh_auto_complete
-unset -f setup_zsh_auto_complete
+_setup_zsh_auto_complete
+unset -f _setup_zsh_auto_complete
 
 zstyle ':completion:*' file-sort name reverse
 zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
@@ -134,7 +124,6 @@ alias python="python3"
 # = zsh-abbr =
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 abbr -S c="code" > /dev/null
-abbr -S g="git" > /dev/null
 abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
@@ -143,15 +132,44 @@ abbr -S ch="cd ~" > /dev/null
 abbr -S tm="tmux" > /dev/null
 abbr -S dus="du -sh" > /dev/null
 abbr -S dut="du -ch" > /dev/null
+# == zsh-abbr for git ==
+abbr -S g="git" > /dev/null
+abbr -S ga="git add" > /dev/null
+abbr -S gaa="git add --all" > /dev/null
+abbr -S gd="git diff" > /dev/null
+abbr -S gds="git diff --staged" > /dev/null
+abbr -S gl="git log" > /dev/null
+abbr -S gp="git push" > /dev/null
+abbr -S gpl="git pull" > /dev/null
+abbr -S gsw="git switch" > /dev/null
+abbr -S gst="git status" > /dev/null
 
-# = completions =
+abbr -S gfp="git fetch --prune" > /dev/null
+abbr -S gswm="git switch main" > /dev/null
+abbr -S gplm="git pull origin main" > /dev/null
+
+# = Other Settings =
+# == nvm ==
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
+
+# == pnpm ==
+export PNPM_HOME="${HOME}/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# = Completions =
+export fpath=(
+  $fpath
+  "${HOME}/.zsh/completions"
+  "${HOME}/.zsh/zsh-completions/src"
+  "$(brew --prefix)/share/zsh/site-functions"
+)
 eval "$(codex completion zsh)"
 eval "$(task --completion zsh)"
 eval "$(uv generate-shell-completion zsh)"
 
-# = other settings =
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
-
-# = starship =
+# = Starship =
 eval "$(starship init zsh)"
