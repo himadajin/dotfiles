@@ -4,10 +4,7 @@ export path=(
   "/opt/homebrew/bin"
   "/opt/homebrew/opt/binutils/bin"
   "${HOME}/.local/bin"
-  "${HOME}/local/bin"
   "${HOME}/local/llvm/llvm@20/bin"
-  "${HOME}/repos/dotfiles/scripts"
-  "${HOME}/.antigravity/antigravity/bin"
 )
 
 # = zsh =
