@@ -30,7 +30,7 @@
   // == Editor ==
   "editor.fontSize": 11.5,
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.formatOnType": false,
   "editor.maxTokenizationLineLength": 15000,
   "editor.minimap.enabled": false,
@@ -43,12 +43,9 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "extensions.ignoreRecommendations": true,
   // == Terminal ==
   "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.initialHint": false,
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
   // == Workbench ==
@@ -73,7 +70,6 @@
   "chat.viewSessions.orientation": "stacked",
   // == Claude Code ==
   "claudeCode.preferredLocation": "sidebar",
-  "claudeCode.selectedModel": "opus",
   "claudeCode.useTerminal": true,
   // == GitHub Copilot ==
   "github.copilot.enable": {
@@ -166,7 +162,11 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // = Extension =
+  // = Extensions =
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "extensions.ignoreRecommendations": true,
   // == Bookmarks ==
   "bookmarks.saveBookmarksInProject": true,
   // == Center Editor Window ==
