@@ -40,7 +40,8 @@ setup_zsh_auto_complete() {
   # list-expand:      Reveal hidden completions.
   # set-mark-command: Activate text selection.
 
-  bindkey '^I' menu-select
+  # Tab: insert unambiguous prefix (default). Use ↓ to enter menu.
+  # bindkey '^I' complete-word  # (default, no override needed)
   bindkey -M menuselect '^I' accept-search
 }
 setup_zsh_auto_complete
