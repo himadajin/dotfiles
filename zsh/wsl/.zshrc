@@ -40,7 +40,8 @@ setup_zsh_auto_complete() {
   # list-expand:      Reveal hidden completions.
   # set-mark-command: Activate text selection.
 
-  bindkey -M menuselect '\t' .accept-line
+  bindkey '^I' menu-select
+  bindkey -M menuselect '^I' accept-search
 }
 setup_zsh_auto_complete
 unset -f setup_zsh_auto_complete
