@@ -114,6 +114,7 @@
     "editor.quickSuggestions": {
       "strings": true
     },
+    "editor.rulers": [120],
     "editor.suggest.insertMode": "replace"
   },
   "[jsonc]": {
@@ -121,6 +122,7 @@
     "editor.quickSuggestions": {
       "strings": true
     },
+    "editor.rulers": [120],
     "editor.suggest.insertMode": "replace"
   },
   // == Markdown ==
@@ -138,6 +140,10 @@
   },
   // == Rust ==
   "rust-analyzer.check.command": "clippy",
+  // == Shellscript ==
+  "[shellscript]": {
+    "editor.rulers": [120]
+  },
   // == Tablegen ==
   "[tablegen]": {
     "editor.rulers": [100]
@@ -170,6 +176,10 @@
   // == Git ==
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
+  // == GitLens ==
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.rebaseEditor.openOnPausedRebase": false,
   // == Hex Editor ==
   "hexeditor.columnWidth": 16,
   "hexeditor.defaultEndianness": "little",
@@ -179,6 +189,7 @@
   "color-highlight.languages": ["!c", "!cpp", "!llvm", "!tablegen", "*"],
   "dontCrossLine.excludeLanguages": [
     "markdown",
+    "shellscript",
     "plaintext",
     "json",
     "tablegen",
