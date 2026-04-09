@@ -97,9 +97,7 @@ _setup_zsh_auto_complete() {
 _setup_zsh_auto_complete
 unset -f _setup_zsh_auto_complete
 
-zstyle ':completion:*' file-sort name reverse
 zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
-
 setopt interactive_comments
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
