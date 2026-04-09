@@ -70,6 +70,16 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebSearch"
     ],
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(ssh:*)",
+      "Bash(sudo:*)",
+      "Bash(wget:*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/.ssh/**)",
+      "Read(**/secrets/**)"
+    ],
     "ask": [
       "Bash(chmod:*)",
       "Bash(cp:*)",
@@ -87,16 +97,6 @@
       "Bash(rm:*)",
       "Read(**/.bash_history)",
       "Read(**/.zsh_history)"
-    ],
-    "deny": [
-      "Bash(curl:*)",
-      "Bash(ssh:*)",
-      "Bash(sudo:*)",
-      "Bash(wget:*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/.ssh/**)",
-      "Read(**/secrets/**)"
     ]
   }
 }
