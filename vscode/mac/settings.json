@@ -56,7 +56,8 @@
   // == Other ==
   "files.associations": {
     "*.gen": "cpp",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "*.json": "jsonc"
   },
   "files.autoSaveWorkspaceFilesOnly": true,
   "security.workspace.trust.untrustedFiles": "open",
