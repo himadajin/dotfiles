@@ -1,10 +1,11 @@
 # = Environment Variables =
 export path=(
-  $path
+  "${HOME}/local/bin"
+  "${HOME}/.local/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/opt/binutils/bin"
-  "${HOME}/.local/bin"
   "${HOME}/local/llvm/llvm@20/bin"
+  $path
 )
 
 # = zsh =
@@ -110,11 +111,6 @@ LISTMAX=1000
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
 alias ll="ls --color=auto -lha"
-
-alias python3="python3.14"
-alias pip3="pip3.14"
-alias pip="pip3"
-alias python="python3"
 
 copilot() {
   local -a allow_tools=(
