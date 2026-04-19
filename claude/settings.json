@@ -98,5 +98,6 @@
       "Read(**/.bash_history)",
       "Read(**/.zsh_history)"
     ]
-  }
+  },
+  "model": "claude-opus-4-6"
 }
