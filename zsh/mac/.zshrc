@@ -116,6 +116,86 @@ alias pip3="pip3.14"
 alias pip="pip3"
 alias python="python3"
 
+copilot() {
+  local -a allow_tools=(
+    'shell(awk:*)'
+    'shell(basename:*)'
+    'shell(cat:*)'
+    'shell(clang:*)'
+    'shell(clang++:*)'
+    'shell(cmake:*)'
+    'shell(cut:*)'
+    'shell(df:*)'
+    'shell(diff:*)'
+    'shell(dirname:*)'
+    'shell(du:*)'
+    'shell(echo:*)'
+    'shell(file:*)'
+    'shell(find:*)'
+    'shell(gcc:*)'
+    'shell(g++:*)'
+    'shell(git branch)'
+    'shell(git diff)'
+    'shell(git log)'
+    'shell(git remote)'
+    'shell(git show)'
+    'shell(git status)'
+    'shell(grep:*)'
+    'shell(head:*)'
+    'shell(llc:*)'
+    'shell(llvm-as:*)'
+    'shell(llvm-dis:*)'
+    'shell(llvm-lit:*)'
+    'shell(llvm-nm:*)'
+    'shell(llvm-objdump:*)'
+    'shell(llvm-readelf:*)'
+    'shell(llvm-size:*)'
+    'shell(llvm-strings:*)'
+    'shell(lit:*)'
+    'shell(ls:*)'
+    'shell(make:*)'
+    'shell(mkdir:*)'
+    'shell(nm:*)'
+    'shell(not:*)'
+    'shell(opt:*)'
+    'shell(printf:*)'
+    'shell(pwd:*)'
+    'shell(python:*)'
+    'shell(python3:*)'
+    'shell(readlink:*)'
+    'shell(realpath:*)'
+    'shell(rg:*)'
+    'shell(sort:*)'
+    'shell(stat:*)'
+    'shell(tail:*)'
+    'shell(task:*)'
+    'shell(tee:*)'
+    'shell(touch:*)'
+    'shell(tr:*)'
+    'shell(uname:*)'
+    'shell(uniq:*)'
+    'shell(uv:*)'
+    'shell(wc:*)'
+    'shell(which:*)'
+    'shell(xargs:*)'
+  )
+  local -a deny_tools=(
+    'shell(curl:*)'
+    'shell(ssh:*)'
+    'shell(sudo:*)'
+    'shell(wget:*)'
+  )
+  local -a copilot_args=()
+  local pattern
+  for pattern in "${allow_tools[@]}"; do
+    copilot_args+=( "--allow-tool=${pattern}" )
+  done
+  for pattern in "${deny_tools[@]}"; do
+    copilot_args+=( "--deny-tool=${pattern}" )
+  done
+  command copilot "${copilot_args[@]}" "$@"
+}
+
 # = zsh-abbr =
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 abbr -S c="code" > /dev/null
