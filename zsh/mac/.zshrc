@@ -113,6 +113,14 @@ alias la="ls --color=auto -a"
 alias ll="ls --color=auto -lha"
 
 copilot() {
+  local -a allowed_dirs=(
+    "${HOME}/.agents/skills"
+    "${HOME}/.claude/skills"
+    "${HOME}/.codex/skills"
+    "${HOME}/compiler"
+    "${HOME}/repos-skills"
+    "${HOME}/works"
+  )
   local -a allow_tools=(
     'shell(awk:*)'
     'shell(basename:*)'
@@ -125,7 +133,9 @@ copilot() {
     'shell(diff:*)'
     'shell(dirname:*)'
     'shell(du:*)'
+    'shell(date:*)'
     'shell(echo:*)'
+    'shell(env:*)'
     'shell(file:*)'
     'shell(find:*)'
     'shell(gcc:*)'
@@ -134,10 +144,14 @@ copilot() {
     'shell(git diff)'
     'shell(git log)'
     'shell(git remote)'
+    'shell(git grep)'
+    'shell(git ls-files)'
+    'shell(git rev-parse)'
     'shell(git show)'
     'shell(git status)'
     'shell(grep:*)'
     'shell(head:*)'
+    'shell(hostname:*)'
     'shell(llc:*)'
     'shell(llvm-as:*)'
     'shell(llvm-dis:*)'
@@ -154,10 +168,12 @@ copilot() {
     'shell(nm:*)'
     'shell(not:*)'
     'shell(opt:*)'
+    'shell(printenv:*)'
     'shell(printf:*)'
     'shell(pwd:*)'
     'shell(python:*)'
     'shell(python3:*)'
+    'shell(sed:*)'
     'shell(readlink:*)'
     'shell(realpath:*)'
     'shell(rg:*)'
@@ -168,6 +184,7 @@ copilot() {
     'shell(tee:*)'
     'shell(touch:*)'
     'shell(tr:*)'
+    'shell(whoami:*)'
     'shell(uname:*)'
     'shell(uniq:*)'
     'shell(uv:*)'
@@ -183,6 +200,9 @@ copilot() {
   )
   local -a copilot_args=()
   local pattern
+  for pattern in "${allowed_dirs[@]}"; do
+    copilot_args+=( "--add-dir=${pattern}" )
+  done
   for pattern in "${allow_tools[@]}"; do
     copilot_args+=( "--allow-tool=${pattern}" )
   done
