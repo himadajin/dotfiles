@@ -240,6 +240,9 @@ abbr -S gswm="git switch main" > /dev/null
 abbr -S gplm="git pull origin main" > /dev/null
 
 # = Other Settings =
+# == go ==
+export PATH="${HOME}/go/bin:${PATH}"
+
 # == nvm ==
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
