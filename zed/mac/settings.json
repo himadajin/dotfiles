@@ -28,10 +28,50 @@
     "dock": "left"
   },
   "buffer_line_height": "comfortable",
+  "buffer_font_family": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
   "buffer_font_weight": 400.0,
   "base_keymap": "VSCode",
   "ui_font_size": 16,
   "buffer_font_size": 12.0,
+  "tab_size": 2,
+  "preferred_line_length": 80,
+  "show_whitespaces": "all",
+  "soft_wrap": "none",
+  "format_on_save": "off",
+  "autosave": "off",
+  "file_types": {
+    "C++": ["gen", "inc"],
+    "JSONC": [
+      "json",
+      "**/.zed/**/*.json",
+      "**/zed/**/*.json",
+      "**/Zed/**/*.json",
+      "**/.vscode/**/*.json"
+    ]
+  },
+  "languages": {
+    "C": {
+      "tab_size": 2,
+      "preferred_line_length": 80
+    },
+    "C++": {
+      "tab_size": 2,
+      "preferred_line_length": 80
+    },
+    "Python": {
+      "tab_size": 4
+    },
+    "Rust": {
+      "tab_size": 4,
+      "preferred_line_length": 120
+    },
+    "JSON": {
+      "tab_size": 2
+    },
+    "JSONC": {
+      "tab_size": 2
+    }
+  },
   "theme": {
     "mode": "system",
     "light": "One Light",
