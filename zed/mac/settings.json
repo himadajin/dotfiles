@@ -83,8 +83,38 @@
   },
   // == Theme ==
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
     "dark": "One Dark Pro"
+  },
+  "theme_overrides": {
+    "One Dark Pro": {
+      "background": "#101010",
+      "border": "#9696af",
+      "border.variant": "#9696af",
+      "editor.active_line.background": "#282d37",
+      "editor.background": "#101010",
+      "editor.gutter.background": "#101010",
+      "editor.highlighted_line.background": "#282d37",
+      "pane.focused_border": "#9696af",
+      "pane_group.border": "#9696af",
+      "panel.background": "#101010",
+      "panel.focused_border": "#9696af",
+      "surface.background": "#101010",
+      "syntax": {
+        "comment": {
+          "color": "#afafaf"
+        },
+        "comment.doc": {
+          "color": "#afafaf"
+        }
+      },
+      "tab.active_background": "#101010",
+      "tab.inactive_background": "#101010",
+      "tab_bar.background": "#101010",
+      "terminal.background": "#101010",
+      "title_bar.background": "#101010",
+      "toolbar.background": "#101010"
+    }
   }
 }
