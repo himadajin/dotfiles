@@ -35,9 +35,11 @@
   "format_on_save": "off",
   "preferred_line_length": 80,
   "show_whitespaces": "all",
+  "show_wrap_guides": true,
   "soft_wrap": "none",
   "tab_size": 2,
   "ui_font_size": 16,
+  "wrap_guides": [80, 100],
   // == Files ==
   "file_types": {
     "C++": ["gen", "inc"],
@@ -78,7 +80,8 @@
     },
     "Rust": {
       "tab_size": 4,
-      "preferred_line_length": 120
+      "preferred_line_length": 120,
+      "wrap_guides": [120]
     }
   },
   // == Theme ==
