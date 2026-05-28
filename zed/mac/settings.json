@@ -68,6 +68,9 @@
     "model_parameters": [],
     "sidebar_side": "right"
   },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   // == Languages ==
   "languages": {
     "C": {
