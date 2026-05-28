@@ -43,6 +43,7 @@
     "C++": ["gen", "inc"],
     "JSONC": [
       "json",
+      "jsonc",
       "**/.zed/**/*.json",
       "**/zed/**/*.json",
       "**/Zed/**/*.json",
