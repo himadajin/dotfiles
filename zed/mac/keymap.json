@@ -9,13 +9,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
-  },
+      "cmd-shift-b": "workspace::ToggleRightDock",
+      "ctrl-;": "terminal_panel::Toggle"
+    }
+  }
 ]
