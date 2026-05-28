@@ -20,12 +20,15 @@
   "collaboration_panel": {
     "dock": "left"
   },
+  "debugger": {
+    "dock": "right"
+  },
   "git_panel": {
     "dock": "left",
     "sort_by_path": true
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "project_panel": {
     "auto_fold_dirs": false,
@@ -62,7 +65,8 @@
     "button": false,
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
+    "sidebar_side": "right"
   },
   // == Languages ==
   "languages": {
