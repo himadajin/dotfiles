@@ -17,7 +17,8 @@
     "dock": "left"
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
+    "sort_by_path": true
   },
   "outline_panel": {
     "dock": "left"
