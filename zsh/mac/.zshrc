@@ -107,6 +107,19 @@ setopt share_history
 setopt append_history
 LISTMAX=1000
 
+zshaddhistory() {
+  local history_line="${1%$'\n'}"
+
+  # Normalize accidental trailing ';;' before saving the command to history.
+  if [[ "${history_line}" == *';;' ]]; then
+    while [[ "${history_line}" == *';;' ]]; do
+      history_line="${history_line%;}"
+    done
+    print -sr -- "${history_line}"
+    return 1
+  fi
+}
+
 # = aliases =
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
