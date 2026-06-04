@@ -102,10 +102,24 @@ zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
 setopt interactive_comments
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt share_history
 setopt append_history
 LISTMAX=1000
+
+zshaddhistory() {
+  local history_line="${1%$'\n'}"
+
+  # Normalize accidental trailing ';;' before saving the command to history.
+  if [[ "${history_line}" == *';;' ]]; then
+    while [[ "${history_line}" == *';;' ]]; do
+      history_line="${history_line%;}"
+    done
+    print -sr -- "${history_line}"
+    return 1
+  fi
+}
 
 # = aliases =
 alias ls="ls --color=auto"
@@ -212,32 +226,27 @@ copilot() {
   command copilot "${copilot_args[@]}" "$@"
 }
 
+relpath() {
+    grealpath --relative-to="$PWD" "$@"
+}
+
 # = zsh-abbr =
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
-abbr -S c="code" > /dev/null
 abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
 abbr -S ch="cd ~" > /dev/null
 abbr -S tm="tmux" > /dev/null
-abbr -S dus="du -sh" > /dev/null
-abbr -S dut="du -ch" > /dev/null
+abbr -S codet="code $(tddir)" > /dev/null
 # == zsh-abbr for git ==
 abbr -S g="git" > /dev/null
-abbr -S ga="git add" > /dev/null
-abbr -S gaa="git add --all" > /dev/null
-abbr -S gd="git diff" > /dev/null
-abbr -S gds="git diff --staged" > /dev/null
-abbr -S gl="git log" > /dev/null
-abbr -S gp="git push" > /dev/null
-abbr -S gpl="git pull" > /dev/null
-abbr -S gsw="git switch" > /dev/null
-abbr -S gst="git status" > /dev/null
+abbr -S gaa="git add -A" > /dev/null
 
+abbr -S gcm="git commit -m" > /dev/null
 abbr -S gfp="git fetch --prune" > /dev/null
+abbr -S gsfp="git switch main && git fetch --prune && git pull origin main" > /dev/null
 abbr -S gswm="git switch main" > /dev/null
-abbr -S gplm="git pull origin main" > /dev/null
 
 # = Other Settings =
 # == go ==

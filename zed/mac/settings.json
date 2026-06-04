@@ -9,6 +9,7 @@
 {
   // = Zed =
   // == Workbench ==
+  "proxy": "",
   "base_keymap": "VSCode",
   "cli_default_open_behavior": "existing_window",
   "icon_theme": "Material Icon Theme",
