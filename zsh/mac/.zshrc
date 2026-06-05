@@ -238,7 +238,7 @@ abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
 abbr -S ch="cd ~" > /dev/null
 abbr -S tm="tmux" > /dev/null
-abbr -S codet="code $(tddir)" > /dev/null
+abbr -S codet='code $(tddir)' > /dev/null
 # == zsh-abbr for git ==
 abbr -S g="git" > /dev/null
 abbr -S gaa="git add -A" > /dev/null
