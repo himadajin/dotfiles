@@ -1,5 +1,4 @@
 # = zsh =
-# enable zsh-syntax-highlighting before zsh-autocomplete
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setup_zsh_auto_complete() {
