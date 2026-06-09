@@ -1,3 +1,13 @@
+# = Environment Variables =
+export path=(
+  $path
+  "/mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin"
+  "${HOME}/.local/bin"
+  "${HOME}/local/bin"
+  "${HOME}/opt/bin"
+  "${RISCV}/bin"
+)
+
 # = zsh =
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -66,15 +76,6 @@ export SAVEHIST=10000
 
 export RISCV="${HOME}/opt/riscv"
 
-export path=(
-  $path
-  "/mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin"
-  "/opt/llvm/llvm@19/bin"
-  "${HOME}/.local/bin"
-  "${HOME}/local/mold/bin"
-  "${HOME}/opt/bin"
-  "${RISCV}/bin"
-)
 
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
