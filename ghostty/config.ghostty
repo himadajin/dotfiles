@@ -1,0 +1,8 @@
+# https://ghostty.org/docs/config
+# `ctrl+shift+,` or `cmd+shift+,` to reload configuration.
+
+window-padding-x = 5
+window-padding-y = 10
+window-padding-balance = true
+
+macos-titlebar-style = tabs

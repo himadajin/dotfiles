@@ -56,7 +56,8 @@
   // == Other ==
   "files.associations": {
     "*.gen": "cpp",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "*.json": "jsonc"
   },
   "files.autoSaveWorkspaceFilesOnly": true,
   "security.workspace.trust.untrustedFiles": "open",
@@ -105,6 +106,7 @@
   "C_Cpp.inlayHints.parameterNames.enabled": true,
   "C_Cpp.inlayHints.referenceOperator.enabled": true,
   // == CMake ==
+  "cmake.configureOnEdit": false,
   "cmake.configureOnOpen": false,
   "cmake.ignoreCMakeListsMissing": true,
   "cmake.pinnedCommands": [
@@ -124,6 +126,18 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://opencode.ai": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://schemastore.org/": true,
+    "https://www.schemastore.org/": true,
+    "https://models.dev/": true
   },
   // == Log ==
   "[log]": {
@@ -198,7 +212,6 @@
   // == Indent Rainbow ==
   "indentRainbow.errorColor": "rgba(128,32,32,0.2)",
   // == lldb ==
-  "lldb.suppressUpdateNotifications": true,
+  "lldb.suppressUpdateNotifications": true
   // = other settings =
-  "dont-cross-line.languages": ["c", "cpp"]
 }

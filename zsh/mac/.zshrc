@@ -1,10 +1,11 @@
 # = Environment Variables =
 export path=(
-  $path
+  "${HOME}/local/bin"
+  "${HOME}/.local/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/opt/binutils/bin"
-  "${HOME}/.local/bin"
   "${HOME}/local/llvm/llvm@20/bin"
+  $path
 )
 
 # = zsh =
@@ -97,55 +98,160 @@ _setup_zsh_auto_complete() {
 _setup_zsh_auto_complete
 unset -f _setup_zsh_auto_complete
 
-zstyle ':completion:*' file-sort name reverse
 zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
-
 setopt interactive_comments
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt share_history
 setopt append_history
 LISTMAX=1000
+
+zshaddhistory() {
+  local history_line="${1%$'\n'}"
+
+  # Normalize accidental trailing ';;' before saving the command to history.
+  if [[ "${history_line}" == *';;' ]]; then
+    while [[ "${history_line}" == *';;' ]]; do
+      history_line="${history_line%;}"
+    done
+    print -sr -- "${history_line}"
+    return 1
+  fi
+}
 
 # = aliases =
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
 alias ll="ls --color=auto -lha"
 
-alias python3="python3.14"
-alias pip3="pip3.14"
-alias pip="pip3"
-alias python="python3"
+copilot() {
+  local -a allowed_dirs=(
+    "${HOME}/.agents/skills"
+    "${HOME}/.claude/skills"
+    "${HOME}/.codex/skills"
+    "${HOME}/compiler"
+    "${HOME}/repos-skills"
+    "${HOME}/works"
+  )
+  local -a allow_tools=(
+    'shell(awk:*)'
+    'shell(basename:*)'
+    'shell(cat:*)'
+    'shell(clang:*)'
+    'shell(clang++:*)'
+    'shell(cmake:*)'
+    'shell(cut:*)'
+    'shell(df:*)'
+    'shell(diff:*)'
+    'shell(dirname:*)'
+    'shell(du:*)'
+    'shell(date:*)'
+    'shell(echo:*)'
+    'shell(env:*)'
+    'shell(file:*)'
+    'shell(find:*)'
+    'shell(gcc:*)'
+    'shell(g++:*)'
+    'shell(git branch)'
+    'shell(git diff)'
+    'shell(git log)'
+    'shell(git remote)'
+    'shell(git grep)'
+    'shell(git ls-files)'
+    'shell(git rev-parse)'
+    'shell(git show)'
+    'shell(git status)'
+    'shell(grep:*)'
+    'shell(head:*)'
+    'shell(hostname:*)'
+    'shell(llc:*)'
+    'shell(llvm-as:*)'
+    'shell(llvm-dis:*)'
+    'shell(llvm-lit:*)'
+    'shell(llvm-nm:*)'
+    'shell(llvm-objdump:*)'
+    'shell(llvm-readelf:*)'
+    'shell(llvm-size:*)'
+    'shell(llvm-strings:*)'
+    'shell(lit:*)'
+    'shell(ls:*)'
+    'shell(make:*)'
+    'shell(mkdir:*)'
+    'shell(nm:*)'
+    'shell(not:*)'
+    'shell(opt:*)'
+    'shell(printenv:*)'
+    'shell(printf:*)'
+    'shell(pwd:*)'
+    'shell(python:*)'
+    'shell(python3:*)'
+    'shell(sed:*)'
+    'shell(readlink:*)'
+    'shell(realpath:*)'
+    'shell(rg:*)'
+    'shell(sort:*)'
+    'shell(stat:*)'
+    'shell(tail:*)'
+    'shell(task:*)'
+    'shell(tee:*)'
+    'shell(touch:*)'
+    'shell(tr:*)'
+    'shell(whoami:*)'
+    'shell(uname:*)'
+    'shell(uniq:*)'
+    'shell(uv:*)'
+    'shell(wc:*)'
+    'shell(which:*)'
+    'shell(xargs:*)'
+  )
+  local -a deny_tools=(
+    'shell(curl:*)'
+    'shell(ssh:*)'
+    'shell(sudo:*)'
+    'shell(wget:*)'
+  )
+  local -a copilot_args=()
+  local pattern
+  for pattern in "${allowed_dirs[@]}"; do
+    copilot_args+=( "--add-dir=${pattern}" )
+  done
+  for pattern in "${allow_tools[@]}"; do
+    copilot_args+=( "--allow-tool=${pattern}" )
+  done
+  for pattern in "${deny_tools[@]}"; do
+    copilot_args+=( "--deny-tool=${pattern}" )
+  done
+  command copilot "${copilot_args[@]}" "$@"
+}
+
+relpath() {
+    grealpath --relative-to="$PWD" "$@"
+}
 
 # = zsh-abbr =
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
-abbr -S c="code" > /dev/null
 abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
 abbr -S ch="cd ~" > /dev/null
 abbr -S tm="tmux" > /dev/null
-abbr -S dus="du -sh" > /dev/null
-abbr -S dut="du -ch" > /dev/null
+abbr -S codet="code $(tddir)" > /dev/null
 # == zsh-abbr for git ==
 abbr -S g="git" > /dev/null
-abbr -S ga="git add" > /dev/null
-abbr -S gaa="git add --all" > /dev/null
-abbr -S gd="git diff" > /dev/null
-abbr -S gds="git diff --staged" > /dev/null
-abbr -S gl="git log" > /dev/null
-abbr -S gp="git push" > /dev/null
-abbr -S gpl="git pull" > /dev/null
-abbr -S gsw="git switch" > /dev/null
-abbr -S gst="git status" > /dev/null
+abbr -S gaa="git add -A" > /dev/null
 
+abbr -S gcm="git commit -m" > /dev/null
 abbr -S gfp="git fetch --prune" > /dev/null
+abbr -S gsfp="git switch main && git fetch --prune && git pull origin main" > /dev/null
 abbr -S gswm="git switch main" > /dev/null
-abbr -S gplm="git pull origin main" > /dev/null
 
 # = Other Settings =
+# == go ==
+export PATH="${HOME}/go/bin:${PATH}"
+
 # == nvm ==
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"

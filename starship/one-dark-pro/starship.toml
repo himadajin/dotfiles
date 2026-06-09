@@ -3,7 +3,6 @@
 add_newline = true
 
 format = """
-$os\
 $directory\
 $git_branch\
 $git_status\
@@ -35,31 +34,32 @@ selectionBackground='#ABB2BF'
 white='#D7DAE0'
 yellow='#D19A66'
 
-[os]
-format = "[$symbol ]($style)"
-style='bold fg:white'
-disabled = false
-
-[os.symbols]
-Ubuntu = ' ' # nf-fa-ubuntu
-Macos = ' ' # nf-fa-apple
-Windows = ' ' # nf-fa-apple
-
 [directory]
 format = '[ $path]($style)'
 style = 'bold fg:green'
 truncation_length = 8
-truncation_symbol = '…/'
+truncation_symbol = '.../'
 truncate_to_repo = false
 
 [git_branch]
-format = '[ $symbol $branch]($style)'
-symbol = ''
+format = '[ $branch]($style)'
+symbol = ''
 style = "bold fg:yellow"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
 style = 'bold fg:yellow'
+conflicted = '='
+ahead = '^'
+behind = 'v'
+diverged = '<>'
+up_to_date = ''
+untracked = '?'
+stashed = '$'
+modified = '!'
+staged = '+'
+renamed = '>'
+deleted = 'x'
 
 [status]
 format = '[ status: $status ]($style)'
@@ -67,7 +67,7 @@ style = 'bold fg:red'
 disabled = false
 
 [time]
-format='[  $time]($style)'
+format='[ @$time]($style)'
 time_format = "%H:%M"
 style='bold fg:blue'
 disabled = false
