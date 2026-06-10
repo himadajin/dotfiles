@@ -236,17 +236,18 @@ abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
-abbr -S ch="cd ~" > /dev/null
-abbr -S tm="tmux" > /dev/null
+abbr -S cdh='cd "${HOME}"' > /dev/null
+abbr -S cdt='cd "$(tddir)"' > /dev/null
 abbr -S codet='code $(tddir)' > /dev/null
-# == zsh-abbr for git ==
-abbr -S g="git" > /dev/null
-abbr -S gaa="git add -A" > /dev/null
-
-abbr -S gcm="git commit -m" > /dev/null
-abbr -S gfp="git fetch --prune" > /dev/null
-abbr -S gsfp="git switch main && git fetch --prune && git pull origin main" > /dev/null
-abbr -S gswm="git switch main" > /dev/null
+abbr -S tm="tmux" > /dev/null
+# ==  git ==
+abbr -S gita="git add -A" > /dev/null
+abbr -S gitaa="git add -A" > /dev/null
+abbr -S gitc="git commit -m" > /dev/null
+abbr -S gitf="git fetch --prune" > /dev/null
+abbr -S gitsc="git switch -c" > /dev/null
+abbr -S gitsm="git switch main" > /dev/null
+abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
 
 # = Other Settings =
 # == go ==
