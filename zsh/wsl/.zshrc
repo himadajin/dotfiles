@@ -1,5 +1,14 @@
+# = Environment Variables =
+export path=(
+  $path
+  "/mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin"
+  "${HOME}/.local/bin"
+  "${HOME}/local/bin"
+  "${HOME}/opt/bin"
+  "${RISCV}/bin"
+)
+
 # = zsh =
-# enable zsh-syntax-highlighting before zsh-autocomplete
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setup_zsh_auto_complete() {
@@ -40,7 +49,9 @@ setup_zsh_auto_complete() {
   # list-expand:      Reveal hidden completions.
   # set-mark-command: Activate text selection.
 
-  bindkey -M menuselect '\t' .accept-line
+  # Tab: insert unambiguous prefix (default). Use ↓ to enter menu.
+  # bindkey '^I' complete-word  # (default, no override needed)
+  bindkey -M menuselect '^I' accept-search
 }
 setup_zsh_auto_complete
 unset -f setup_zsh_auto_complete
@@ -65,15 +76,6 @@ export SAVEHIST=10000
 
 export RISCV="${HOME}/opt/riscv"
 
-export path=(
-  $path
-  "/mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin"
-  "/opt/llvm/llvm@19/bin"
-  "${HOME}/.local/bin"
-  "${HOME}/local/mold/bin"
-  "${HOME}/opt/bin"
-  "${RISCV}/bin"
-)
 
 alias ls="ls --color=auto"
 alias la="ls --color=auto -a"
@@ -81,30 +83,22 @@ alias ll="ls --color=auto -lha"
 
 # = zsh-abbr =
 source "${HOME}/.zsh/zsh-abbr/zsh-abbr.zsh"
-abbr -S c="code" > /dev/null
 abbr -S m="make" > /dev/null
 abbr -S t="task" > /dev/null
 abbr -S v="nvim" > /dev/null
 abbr -S cl="clear" > /dev/null
-abbr -S ch="cd ~" > /dev/null
+abbr -S cdh='cd "${HOME}"' > /dev/null
+abbr -S cdt='cd "$(tddir)"' > /dev/null
+abbr -S codet='code "$(tddir)"' > /dev/null
 abbr -S tm="tmux" > /dev/null
-abbr -S dus="du -sh" > /dev/null
-abbr -S dut="du -ch" > /dev/null
-# == zsh-abbr for git ==
-abbr -S g="git" > /dev/null
-abbr -S ga="git add" > /dev/null
-abbr -S gaa="git add --all" > /dev/null
-abbr -S gd="git diff" > /dev/null
-abbr -S gds="git diff --staged" > /dev/null
-abbr -S gl="git log" > /dev/null
-abbr -S gp="git push" > /dev/null
-abbr -S gpl="git pull" > /dev/null
-abbr -S gsw="git switch" > /dev/null
-abbr -S gst="git status" > /dev/null
-
-abbr -S gfp="git fetch --prune" > /dev/null
-abbr -S gswm="git switch main" > /dev/null
-abbr -S gplm="git pull origin main" > /dev/null
+# ==  git ==
+abbr -S gita="git add -A" > /dev/null
+abbr -S gitaa="git add -A" > /dev/null
+abbr -S gitc="git commit -m" > /dev/null
+abbr -S gitf="git fetch --prune" > /dev/null
+abbr -S gitsc="git switch -c" > /dev/null
+abbr -S gitsm="git switch main" > /dev/null
+abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
 
 # = Other Settings =
 # == nvm ==
