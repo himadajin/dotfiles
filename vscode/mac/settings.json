@@ -145,6 +145,10 @@
   },
   // == Makefile ==
   "makefile.configureOnOpen": false,
+  // == Markdown ==
+  "[markdown]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
   // == Python ==
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
