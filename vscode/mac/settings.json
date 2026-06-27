@@ -49,6 +49,8 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
   // == Workbench ==
+  "workbench.editor.useModal": "off",
+  "workbench.settings.editor": "json",
   "workbench.secondarySideBar.showLabels": false,
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": true,
@@ -145,6 +147,10 @@
   },
   // == Makefile ==
   "makefile.configureOnOpen": false,
+  // == Markdown ==
+  "[markdown]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
   // == Python ==
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
