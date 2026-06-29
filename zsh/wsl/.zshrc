@@ -101,10 +101,6 @@ abbr -S gitsm="git switch main" > /dev/null
 abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
 
 # = Other Settings =
-# == nvm ==
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # == rust ==
 . "${HOME}/.cargo/env"
 
