@@ -100,10 +100,6 @@ abbr -S gitsc="git switch -c" > /dev/null
 abbr -S gitsm="git switch main" > /dev/null
 abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
 
-# = Other Settings =
-# == rust ==
-. "${HOME}/.cargo/env"
-
 # = Completions =
 export fpath=(
   $fpath
