@@ -2,8 +2,6 @@
 export path=(
   "${HOME}/local/bin"
   "${HOME}/.local/bin"
-  "/opt/homebrew/bin"
-  "/opt/homebrew/opt/binutils/bin"
   "${HOME}/local/llvm/llvm@20/bin"
   $path
 )
@@ -248,21 +246,6 @@ abbr -S gitf="git fetch --prune" > /dev/null
 abbr -S gitsc="git switch -c" > /dev/null
 abbr -S gitsm="git switch main" > /dev/null
 abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
-
-# = Other Settings =
-# == go ==
-export PATH="${HOME}/go/bin:${PATH}"
-
-# == nvm ==
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
-
-# == pnpm ==
-export PNPM_HOME="${HOME}/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 # = Completions =
 export fpath=(
