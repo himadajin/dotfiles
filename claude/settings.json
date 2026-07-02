@@ -71,10 +71,8 @@
       "WebSearch"
     ],
     "deny": [
-      "Bash(curl:*)",
       "Bash(ssh:*)",
       "Bash(sudo:*)",
-      "Bash(wget:*)",
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/.ssh/**)",
