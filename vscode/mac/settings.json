@@ -84,7 +84,9 @@
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
-    { "text": "Use conventional commit message format." }
+    { "text": "Use Conventional Commits." },
+    { "text": "Use docs for documentation-only changes. Prefer a more specific type than chore when one applies."},
+    { "text": "Omit scopes in commit summaries. Keep summaries concise, lowercase, and without a trailing period."}
   ],
   // = Languages =
   // == C/C++ ==
