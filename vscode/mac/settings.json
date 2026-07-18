@@ -48,6 +48,7 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
   // == Workbench ==
+  "workbench.colorTheme": "One Dark Pro Night Flat",
   "workbench.editor.useModal": "off",
   "workbench.settings.editor": "json",
   "workbench.secondarySideBar.showLabels": false,
@@ -62,6 +63,7 @@
   },
   "files.autoSaveWorkspaceFilesOnly": true,
   "security.workspace.trust.untrustedFiles": "open",
+  "security.promptForLocalFileProtocolHandling": false
   "update.showReleaseNotes": false,
   // = AI =
   // == Chat ==
@@ -220,6 +222,5 @@
   "indentRainbow.errorColor": "rgba(128,32,32,0.2)",
   // == lldb ==
   "lldb.suppressUpdateNotifications": true,
-  "workbench.colorTheme": "One Dark Pro Night Flat"
   // = other settings =
 }
