@@ -243,6 +243,7 @@ abbr -S gita="git add -A" > /dev/null
 abbr -S gitaa="git add -A" > /dev/null
 abbr -S gitc="git commit -m" > /dev/null
 abbr -S gitf="git fetch --prune" > /dev/null
+abbr -S gitfp="git fetch --prune && git pull origin main" > /dev/null
 abbr -S gitsc="git switch -c" > /dev/null
 abbr -S gitsm="git switch main" > /dev/null
 abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
