@@ -1,4 +1,19 @@
 {
+  "agentPushNotifEnabled": true,
+    "enabledPlugins": {
+    "codex@openai-codex": true
+  },
+  "effortLevel": "high",
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "inputNeededNotifEnabled": true,
+  "model": "sonnet",
   "permissions": {
     "allow": [
       "Bash(awk:*)",
@@ -71,10 +86,8 @@
       "WebSearch"
     ],
     "deny": [
-      "Bash(curl:*)",
       "Bash(ssh:*)",
       "Bash(sudo:*)",
-      "Bash(wget:*)",
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/.ssh/**)",
@@ -82,22 +95,16 @@
     ],
     "ask": [
       "Bash(chmod:*)",
-      "Bash(cp:*)",
       "Bash(env:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rebase:*)",
       "Bash(git reset:*)",
-      "Bash(mv:*)",
       "Bash(patch:*)",
       "Bash(pip:*)",
       "Bash(pip3:*)",
-      "Bash(sed:*)",
-      "Bash(rm:*)",
       "Read(**/.bash_history)",
       "Read(**/.zsh_history)"
     ]
   },
-  "model": "opus"
+  "tui": "fullscreen"
 }
