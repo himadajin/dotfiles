@@ -8,25 +8,24 @@
   },
   "workbench.colorCustomizations": {
     "[One Dark Pro Night Flat]": {
-      "editor.foreground": "#f0f0f0",
+      "editor.foreground": "#a0a0a0",
       // Background Colors
-      "editor.background": "#101010",
-      "terminal.background": "#101010",
-      "sideBar.background": "#101010",
-      "activityBar.background": "#101010",
+      "editor.background": "#0a0a0a",
+      "terminal.background": "#0a0a0a",
+      "sideBar.background": "#0a0a0a",
+      "activityBar.background": "#0a0a0a",
       // Border Colors
-      "activityBar.border": "#9696af",
-      "editorGroup.border": "#9696af",
-      "input.border": "#9696af",
-      "panel.border": "#9696af",
-      "statusBar.border": "#9696af",
-      "sideBar.border": "#9696af",
-      "sideBarSectionHeader.border": "#9696af",
-      "tab.border": "#9696af",
-      "titleBar.border": "#9696af"
+      "activityBar.border": "#c0c0c0",
+      "editorGroup.border": "#c0c0c0",
+      "input.border": "#c0c0c0",
+      "panel.border": "#c0c0c0",
+      "statusBar.border": "#c0c0c0",
+      "sideBar.border": "#c0c0c0",
+      "sideBarSectionHeader.border": "#c0c0c0",
+      "tab.border": "#c0c0c0",
+      "titleBar.border": "#c0c0c0"
     }
   },
-  "workbench.colorTheme": "One Dark Pro Night Flat",
   // == Editor ==
   "editor.fontSize": 11.5,
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'CodeNewRoman Nerd Font'",
@@ -49,6 +48,7 @@
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
   // == Workbench ==
+  "workbench.colorTheme": "One Dark Pro Night Flat",
   "workbench.editor.useModal": "off",
   "workbench.settings.editor": "json",
   "workbench.secondarySideBar.showLabels": false,
@@ -63,6 +63,7 @@
   },
   "files.autoSaveWorkspaceFilesOnly": true,
   "security.workspace.trust.untrustedFiles": "open",
+  "security.promptForLocalFileProtocolHandling": false
   "update.showReleaseNotes": false,
   // = AI =
   // == Chat ==
@@ -85,7 +86,9 @@
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
-    { "text": "Use conventional commit message format." }
+    { "text": "Use Conventional Commits." },
+    { "text": "Use docs for documentation-only changes. Prefer a more specific type than chore when one applies."},
+    { "text": "Omit scopes in commit summaries. Keep summaries concise, lowercase, and without a trailing period."}
   ],
   // = Languages =
   // == C/C++ ==
@@ -149,7 +152,7 @@
   "makefile.configureOnOpen": false,
   // == Markdown ==
   "[markdown]": {
-    "editor.defaultFormatter": "dprint.dprint",
+    "editor.defaultFormatter": "dprint.dprint"
   },
   // == Python ==
   "[python]": {
@@ -218,6 +221,6 @@
   // == Indent Rainbow ==
   "indentRainbow.errorColor": "rgba(128,32,32,0.2)",
   // == lldb ==
-  "lldb.suppressUpdateNotifications": true
+  "lldb.suppressUpdateNotifications": true,
   // = other settings =
 }
