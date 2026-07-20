@@ -1,0 +1,5 @@
+# herdr configuration
+# https://herdr.dev/docs/configuration/
+
+[theme]
+name = "one-dark"
