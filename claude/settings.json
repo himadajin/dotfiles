@@ -1,33 +1,4 @@
 {
-  "agentPushNotifEnabled": true,
-  "effortLevel": "high",
-  "enabledPlugins": {
-    "codex@openai-codex": true
-  },
-  "extraKnownMarketplaces": {
-    "openai-codex": {
-      "source": {
-        "repo": "openai/codex-plugin-cc",
-        "source": "github"
-      }
-    }
-  },
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "command": "bash '/Users/taiki/.claude/hooks/herdr-agent-state.sh' session",
-            "timeout": 10,
-            "type": "command"
-          }
-        ],
-        "matcher": "*"
-      }
-    ]
-  },
-  "inputNeededNotifEnabled": true,
-  "model": "sonnet",
   "permissions": {
     "allow": [
       "Bash(awk:*)",
@@ -99,6 +70,14 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebSearch"
     ],
+    "deny": [
+      "Bash(ssh:*)",
+      "Bash(sudo:*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/.ssh/**)",
+      "Read(**/secrets/**)"
+    ],
     "ask": [
       "Bash(chmod:*)",
       "Bash(env:*)",
@@ -110,15 +89,36 @@
       "Bash(pip3:*)",
       "Read(**/.bash_history)",
       "Read(**/.zsh_history)"
-    ],
-    "deny": [
-      "Bash(ssh:*)",
-      "Bash(sudo:*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/.ssh/**)",
-      "Read(**/secrets/**)"
     ]
   },
-  "tui": "fullscreen"
+  "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/taiki/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
