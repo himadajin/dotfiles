@@ -91,8 +91,6 @@ _setup_zsh_auto_complete() {
   # .accept-line: Accept command line.
   # accept-line:  Accept selection and exit menu.
 }
-_setup_zsh_auto_complete
-unset -f _setup_zsh_auto_complete
 
 zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
 setopt interactive_comments
@@ -259,6 +257,15 @@ autoload -Uz compinit && compinit
 eval "$(codex completion zsh)"
 eval "$(task --completion zsh)"
 eval "$(uv generate-shell-completion zsh)"
+
+# = zsh completion =
+USE_ZRUSH=1
+if [[ "${USE_ZRUSH}" == "1" ]]; then
+  source ~/repos/zrush/zsh/zrush.zsh
+else
+  _setup_zsh_auto_complete
+fi
+unset -f _setup_zsh_auto_complete
 
 # = Starship =
 eval "$(starship init zsh)"
