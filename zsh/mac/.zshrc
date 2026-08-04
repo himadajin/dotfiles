@@ -261,7 +261,7 @@ eval "$(uv generate-shell-completion zsh)"
 # = zsh completion =
 USE_ZRUSH=1
 if [[ "${USE_ZRUSH}" == "1" ]]; then
-  source ~/repos/zrush/zsh/zrush.zsh
+  source <(~/repos/zrush/target/release/zrush init zsh)
 else
   _setup_zsh_auto_complete
 fi
