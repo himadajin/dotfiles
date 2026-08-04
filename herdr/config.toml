@@ -1,5 +1,6 @@
 # herdr configuration
 # https://herdr.dev/docs/configuration/
+onboarding = false
 
 [theme]
 name = "one-dark"

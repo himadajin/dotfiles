@@ -7,8 +7,6 @@ export path=(
 )
 
 # = zsh =
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 _setup_zsh_auto_complete() {
   skip_global_compinit=1
 
@@ -93,8 +91,6 @@ _setup_zsh_auto_complete() {
   # .accept-line: Accept command line.
   # accept-line:  Accept selection and exit menu.
 }
-_setup_zsh_auto_complete
-unset -f _setup_zsh_auto_complete
 
 zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
 setopt interactive_comments
@@ -256,9 +252,23 @@ export fpath=(
   "${HOME}/.zsh/zsh-completions/src"
   "$(brew --prefix)/share/zsh/site-functions"
 )
+# compinit は fpath 設定後かつ補完スクリプトの実行(compdefの実行)より前に実行する
+autoload -Uz compinit && compinit
 eval "$(codex completion zsh)"
 eval "$(task --completion zsh)"
 eval "$(uv generate-shell-completion zsh)"
 
+# = zsh completion =
+USE_ZRUSH=1
+if [[ "${USE_ZRUSH}" == "1" ]]; then
+  source ~/repos/zrush/zsh/zrush.zsh
+else
+  _setup_zsh_auto_complete
+fi
+unset -f _setup_zsh_auto_complete
+
 # = Starship =
 eval "$(starship init zsh)"
+
+# = zsh-syntax-highlighting =
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
