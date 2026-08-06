@@ -4,23 +4,6 @@ dotenv:
   - ".env"
 
 tasks:
-  update-vscode:
-    cmds:
-      - task: update-vscode-mac
-        platforms: [darwin]
-      - task: update-vscode-win
-        platforms: [windows]
-
-
-  update-vscode-mac:
-    internal: true
-    platforms: [darwin]
-    dir: "./vscode/{{.MACHINE_NAME}}"
-    cmds:
-      - cp "${HOME}/Library/Application Support/Code/User/keybindings.json" .
-      - cp "${HOME}/Library/Application Support/Code/User/settings.json" .
-
-
   update-vscode-win:
     internal: true
     platforms: [windows]
@@ -28,18 +11,3 @@ tasks:
     cmds:
       - cp "${HOME}/AppData/Roaming/Code/User/keybindings.json" .
       - cp "${HOME}/AppData/Roaming/Code/User/settings.json" .
-
-
-  update-zsh:
-    cmds:
-      - task: update-zsh-unix
-        platforms: [darwin, linux]
-
-
-  update-zsh-unix:
-    internal: true
-    platforms: [darwin, linux]
-    dir: "./zsh/{{.MACHINE_NAME}}"
-    cmds:
-      - cp "${HOME}/.zshenv" .
-      - cp "${HOME}/.zshrc" .
