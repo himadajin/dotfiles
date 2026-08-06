@@ -1,3 +1,5 @@
+DOTFILES_DIR="${${(%):-%N}:A:h:h:h}"
+
 # = Environment Variables =
 export path=(
   "${HOME}/local/bin"
@@ -315,6 +317,7 @@ EOF
 export fpath=(
   $fpath
   "${HOME}/.zsh/completions"
+  "${DOTFILES_DIR}/zsh-completions"
   "${HOME}/.zsh/zsh-completions/src"
   "$(brew --prefix)/share/zsh/site-functions"
 )
