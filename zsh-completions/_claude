@@ -533,7 +533,7 @@ _claude() {
     '--autocompact[auto-compact window size]:size:(auto tokens)'
     '--ax-screen-reader[render screen-reader-friendly output]'
     '--bare[skip customizations and use minimal mode]'
-    '{--bg,--background}[start the session as a background agent]'
+    {--bg,--background}'[start the session as a background agent]'
     '*--betas[beta headers to include in API requests]:beta'
     '--brief[enable SendUserMessage for agent-to-user communication]'
     '--chrome[enable Claude in Chrome integration]'
