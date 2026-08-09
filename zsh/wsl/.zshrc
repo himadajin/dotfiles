@@ -106,6 +106,7 @@ export fpath=(
   "${HOME}/.zsh/zsh-completions/src"
 )
 eval "$(codex completion zsh)"
+eval "$(herdr completion zsh)"
 eval "$(task --completion zsh)"
 eval "$(tddir -c zsh)"
 eval "$(uv generate-shell-completion zsh)"

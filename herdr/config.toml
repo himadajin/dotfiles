@@ -2,6 +2,8 @@
 # https://herdr.dev/docs/configuration/
 onboarding = false
 
+onboarding = false
+
 [theme]
 name = "one-dark"
 
