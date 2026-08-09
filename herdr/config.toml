@@ -1,14 +1,17 @@
+onboarding = false
 # herdr configuration
 # https://herdr.dev/docs/configuration/
-onboarding = false
-
-onboarding = false
 
 [theme]
 name = "one-dark"
 
 [keys]
 prefix = "ctrl+space"
+
+new_workspace = "prefix+shift+c"
+previous_workspace = "prefix+shift+p"
+next_workspace = "prefix+shift+n"
+switch_workspace = "prefix+shift+1..9"
 
 [ui]
 agent_panel_sort = "spaces"

@@ -11,51 +11,6 @@ export path=(
 # = zsh =
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-setup_zsh_auto_complete() {
-  skip_global_compinit=1
-
-  zstyle ':autocomplete:*' add-space executables aliases functions builtins reserved-words commands
-  zstyle ':autocomplete:*' add-semicolon no
-  zstyle ':autocomplete:*' default-context ''
-  zstyle ':autocomplete:*' ignored-input ''
-  zstyle ':autocomplete:*' list-lines 16  # int
-  zstyle ':autocomplete:*' min-delay 0.1  # float
-  zstyle ':autocomplete:*' min-input 0  # int
-  zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
-  zstyle ':autocomplete:history-incremental-search-*:*' list-lines 16  # int
-  zstyle ':autocomplete:history-search:*' list-lines 16  # int
-  zstyle ':autocomplete:*' recent-dirs cdr
-  zstyle ':autocomplete:*' fzf-completion no
-
-  source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-  ##
-  # NOTE: All configuration below should come AFTER sourcing zsh-autocomplete!
-  #
-
-  # Up arrow:
-  bindkey '\e[A' up-line-or-search
-  bindkey '\eOA' up-line-or-search
-  # up-line-or-search:  Open history menu.
-  # up-line-or-history: Cycle to previous history line.
-
-  # Down arrow:
-  bindkey '\e[B' down-line-or-select
-  bindkey '\eOB' down-line-or-select
-  # down-line-or-select:  Open completion menu.
-  # down-line-or-history: Cycle to next history line.
-
-  # Control-Space:
-  bindkey '\0' list-expand
-  # list-expand:      Reveal hidden completions.
-  # set-mark-command: Activate text selection.
-
-  # Tab: insert unambiguous prefix (default). Use ↓ to enter menu.
-  # bindkey '^I' complete-word  # (default, no override needed)
-  bindkey -M menuselect '^I' accept-search
-}
-setup_zsh_auto_complete
-unset -f setup_zsh_auto_complete
-
 zstyle ':completion:*' file-sort name reverse
 zstyle ':completion:*' list-rows-first LIST_ROWS_FIRST
 
@@ -105,11 +60,14 @@ export fpath=(
   $fpath
   "${HOME}/.zsh/zsh-completions/src"
 )
+autoload -Uz compinit && compinit
 eval "$(codex completion zsh)"
 eval "$(herdr completion zsh)"
 eval "$(task --completion zsh)"
 eval "$(tddir -c zsh)"
 eval "$(uv generate-shell-completion zsh)"
+
+source <("${HOME}/repos/zrush/target/release/zrush" init zsh)
 
 # = Starship =
 eval "$(starship init zsh)"
