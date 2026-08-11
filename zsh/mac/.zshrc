@@ -244,14 +244,16 @@ abbr -S -q cdh='cd ~'
 abbr -S -q cdt='cd "$(tddir)"'
 abbr -S -q codet='code $(tddir)' > /dev/null
 # ==  git ==
-abbr -S gita="git add -A" > /dev/null
-abbr -S gitaa="git add -A" > /dev/null
-abbr -S gitc="git commit -m" > /dev/null
-abbr -S gitf="git fetch --prune" > /dev/null
-abbr -S gitfp="git fetch --prune && git pull origin main" > /dev/null
-abbr -S gitsc="git switch -c" > /dev/null
-abbr -S gitsm="git switch main" > /dev/null
-abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /dev/null
+abbr -S -q g="git"
+abbr -S -q gita="git add -A"
+abbr -S -q gitc="git commit -m"
+abbr -S -q gitd="git diff"
+abbr -S -q gitf="git fetch --prune"
+abbr -S -q gitr="git rebase -i"
+abbr -S -q gitlo="git log --oneline --graph --decorate"
+abbr -S -q gits="git switch -c"
+abbr -S -q gitsc="git switch -c"
+abbr -S -q gitp="git switch main && git fetch --prune && git pull origin main"
 
 gitmsg() {
   local repo_root diff message message_file
