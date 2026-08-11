@@ -235,15 +235,14 @@ relpath() {
 
 # = zsh-abbr =
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
-abbr -S h="herdr" > /dev/null
-abbr -S m="make" > /dev/null
-abbr -S t="task" > /dev/null
-abbr -S v="nvim" > /dev/null
-abbr -S cl="clear" > /dev/null
-abbr -S cdh='cd "${HOME}"' > /dev/null
-abbr -S cdt='cd "$(tddir)"' > /dev/null
-abbr -S codet='code $(tddir)' > /dev/null
-abbr -S tm="tmux" > /dev/null
+abbr -S -q h="herdr"
+abbr -S -q m="make"
+abbr -S -q t="task"
+abbr -S -q v="nvim"
+abbr -S -q cl="clear"
+abbr -S -q cdh='cd ~'
+abbr -S -q cdt='cd "$(tddir)"'
+abbr -S -q codet='code $(tddir)' > /dev/null
 # ==  git ==
 abbr -S gita="git add -A" > /dev/null
 abbr -S gitaa="git add -A" > /dev/null
