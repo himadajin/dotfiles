@@ -8,6 +8,7 @@ $git_branch\
 $git_status\
 $status\
 $time\
+$hostname\
 \n$character"""
 
 palette = 'one-dark-pro'
@@ -62,7 +63,7 @@ renamed = '>'
 deleted = 'x'
 
 [status]
-format = '[ status: $status ]($style)'
+format = '[ status: $status]($style)'
 style = 'bold fg:red'
 disabled = false
 
@@ -71,6 +72,13 @@ format='[ @$time]($style)'
 time_format = "%H:%M"
 style='bold fg:blue'
 disabled = false
+
+[hostname]
+ssh_only = true
+format = ' [ssh:$hostname]($style)'
+style = 'bold fg:purple'
+trim_at = ""
+aliases = { "vm-bb88e238-6e" = "taiki-conoha" }
 
 [package]
 disabled = true
