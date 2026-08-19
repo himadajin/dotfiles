@@ -34,6 +34,10 @@ abbr -S gitp="git switch main && git fetch --prune && git pull origin main" > /d
 
 # = Completions =
 autoload -Uz compinit && compinit
+eval "$(codex completion zsh)"
+eval "$(herdr completion zsh)"
+eval "$(task --completion zsh)"
+eval "$(uv generate-shell-completion zsh)"
 source <("${HOME}/repos-zsh/zrush/target/release/zrush" init zsh)
 
 # = Starship =
