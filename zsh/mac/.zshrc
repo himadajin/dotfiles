@@ -69,7 +69,7 @@ _setup_zsh_auto_complete() {
   zstyle ':autocomplete:*' add-space \
       executables aliases functions builtins reserved-words commands
 
-  source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+  source ~/repos-zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
   ##
   # NOTE: All configuration below should come AFTER sourcing zsh-autocomplete!
   #
@@ -324,9 +324,9 @@ EOF
 # = Completions =
 export fpath=(
   $fpath
-  "${HOME}/.zsh/completions"
+  "${HOME}/repos-zsh/completions"
   "${DOTFILES_DIR}/zsh-completions"
-  "${HOME}/.zsh/zsh-completions/src"
+  "${HOME}/repos-zsh/zsh-completions/src"
   "$(brew --prefix)/share/zsh/site-functions"
 )
 # compinit は fpath 設定後かつ補完スクリプトの実行(compdefの実行)より前に実行する
@@ -338,7 +338,7 @@ eval "$(uv generate-shell-completion zsh)"
 # = zsh completion =
 USE_ZRUSH=1
 if [[ "${USE_ZRUSH}" == "1" ]]; then
-  source <(~/repos/zrush/target/release/zrush init zsh)
+  source <(~/repos-zsh/zrush/target/release/zrush init zsh)
 else
   _setup_zsh_auto_complete
 fi
