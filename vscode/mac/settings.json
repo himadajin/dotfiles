@@ -47,6 +47,16 @@
   "terminal.integrated.initialHint": false,
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": false,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
   // == Workbench ==
   "workbench.colorTheme": "One Dark Pro Night Flat",
   "workbench.editor.useModal": "off",
@@ -216,6 +226,6 @@
   // == Indent Rainbow ==
   "indentRainbow.errorColor": "rgba(128,32,32,0.2)",
   // == lldb ==
-  "lldb.suppressUpdateNotifications": true,
+  "lldb.suppressUpdateNotifications": true
   // = other settings =
 }
