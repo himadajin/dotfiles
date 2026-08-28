@@ -64,7 +64,6 @@ autoload -Uz compinit && compinit
 eval "$(codex completion zsh)"
 eval "$(herdr completion zsh)"
 eval "$(task --completion zsh)"
-eval "$(tddir -c zsh)"
 eval "$(uv generate-shell-completion zsh)"
 
 source <("${HOME}/repos/zrush/target/release/zrush" init zsh)
