@@ -346,6 +346,3 @@ unset -f _setup_zsh_auto_complete
 
 # = Starship =
 eval "$(starship init zsh)"
-
-# = zsh-syntax-highlighting =
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
