@@ -234,12 +234,17 @@ relpath() {
 }
 
 hermes-tunnel() {
-  ssh -N -T \
-    -o ExitOnForwardFailure=yes \
-    -o ServerAliveInterval=60 \
-    -o ServerAliveCountMax=3 \
-    -L 127.0.0.1:9119:127.0.0.1:9119 \
-    taiki-conoha
+  local -a ssh_args=(
+    "-N"
+    "-T"
+    "-o ExitOnForwardFailure=yes"
+    "-o ServerAliveInterval=60"
+    "-o ServerAliveCountMax=3"
+    "-L 127.0.0.1:9119:127.0.0.1:9119"
+    "taiki-conoha"
+  )
+  echo "Running: ssh ${ssh_args[*]}"
+  ssh "${ssh_args[@]}"
 }
 
 # = zsh-abbr =
