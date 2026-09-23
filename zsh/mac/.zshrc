@@ -233,6 +233,20 @@ relpath() {
     grealpath --relative-to="$PWD" "$@"
 }
 
+hermes-tunnel() {
+  local -a ssh_args=(
+    "-N"
+    "-T"
+    "-o ExitOnForwardFailure=yes"
+    "-o ServerAliveInterval=60"
+    "-o ServerAliveCountMax=3"
+    "-L 127.0.0.1:9119:127.0.0.1:9119"
+    "taiki-conoha"
+  )
+  echo "Running: ssh ${ssh_args[*]}"
+  ssh "${ssh_args[@]}"
+}
+
 # = zsh-abbr =
 source "$(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh"
 abbr -S -q h="herdr"
