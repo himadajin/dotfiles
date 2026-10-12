@@ -22,7 +22,12 @@ alias ll="ls --color=auto -lha"
 
 # = zsh-abbr =
 source "${HOME}/repos-zsh/zsh-abbr/zsh-abbr.zsh"
-abbr -S cl="clear" > /dev/null
+abbr -S -q m="make"
+abbr -S -q t="task"
+abbr -S -q cl="clear"
+abbr -S -q cdh='cd ~'
+abbr -S -q cdt='cd "$(tddir)"'
+abbr -S -q codet='code $(tddir)' > /dev/null
 # ==  git ==
 abbr -S gita="git add -A" > /dev/null
 abbr -S gitaa="git add -A" > /dev/null
